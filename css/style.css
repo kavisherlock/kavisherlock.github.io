@@ -1,0 +1,28 @@
+/* Custom Stylesheet */
+
+body {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.container {
+   background-image: url("../resources/sherlock2.png");
+   background-color: rgba(238, 239, 255, 0.5);
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: right center;
+}
+
+.nav-wrapper {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+#index-banner {
+  padding-top: 8em;
+  padding-bottom: 8em;
+  text-shadow: 0.5px 0.5px #fff;
+}
+
+#find-button {
+  background-color: rgba(179, 136, 255, 0.75);
+}
