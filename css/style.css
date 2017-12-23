@@ -1,15 +1,12 @@
 /* Custom Stylesheet */
 
 body {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(245, 245, 245);
+  color: #777;
 }
 
 .container {
-   background-image: url("../resources/sherlock2.png");
-   background-color: rgba(238, 239, 255, 0.5);
-   background-size: contain;
-   background-repeat: no-repeat;
-   background-position: right center;
+  margin-bottom: 5em;
 }
 
 .nav-wrapper {
@@ -21,8 +18,21 @@ body {
   padding-top: 8em;
   padding-bottom: 8em;
   text-shadow: 0.5px 0.5px #fff;
+  background-image: url("../resources/sherlock.png");
+  background-color: rgba(238, 239, 255, 0.5);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.sherlock-quote {
+  font-weight: bolder;
 }
 
 #find-button {
   background-color: rgba(179, 136, 255, 0.75);
+}
+
+.my-section-header {
+  padding: 0.05em 1em 0.05em 1em;
 }

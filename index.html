@@ -14,32 +14,49 @@
   <body>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="scripts/materialize.min.js"></script>
+    <script type="text/javascript" src="scripts/myjs.js"></script>
 
-    <div class="container">
-      <nav role="navigation">
-        <div class="nav-wrapper purple darken-3 black-text">
-          <a id="logo-container" href="#" class="brand-logo">Kavish</a>
+    <div class="navbar-fixed">
+      <nav class="nav-extended" role="navigation">
+        <div class="nav-wrapper purple darken-3">
+          <a id="logo-container" href="#home" class="brand-logo">Kavish</a>
+          <a href="#" data-activates="hidden-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul id="hidden-menu" class="side-nav">
+            <li><a href="#books">Books</a></li>
+            <li><a href="#food">Food</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#me">Me</a></li>
+          </ul>
           <ul class="right hide-on-med-and-down">
             <li><a href="#books">Books</a></li>
             <li><a href="#food">Food</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#me">Me</a></li>
           </ul>
-
-          <ul id="nav-mobile" class="side-nav">
-            <li><a href="#books">Books</a></li>
-            <li><a href="#food">Food</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#me">Me</a></li>
-          </ul>
-          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
       </nav>
+    </div>
+
+    <!--SECTION: INDEX-->
+    <div id="home" class="container scrollspy">
       <div class="section no-pad-bot" id="index-banner">
         <h1 class="header center purple-text">Welcome</h1>
+        <h1 class="header center purple-text">I am <span class="deep-purple-text text-accent-1">Kavish</span></h1>
+        <br><br>
         <div class="row center">
-          <p class="col s6 offset-s3 light grey-text text-darken-3">
+          <a
+            href="#"
+            id="find-button"
+            data-activates="hidden-menu"
+            class="btn-large button-collapse waves-effect waves-light"
+          >
+            Find Out More About Me
+          </a>
+        </div>
+        <br><br>
+        <div class="row center">
+          <p class="sherlock-quote col s6 offset-s3 light grey-text text-darken-3">
             “My mind," he said, "rebels at stagnation.
             Give me problems, give me work, give me the most abstruse cryptogram or the most intricate analysis, and I am in my own proper atmosphere.
             I can dispense then with artificial stimulants.
@@ -49,12 +66,153 @@
             ― Arthur Conan Doyle, The Sign of Four
           </p>
         </div>
-        <br><br>
-        <div class="row center">
-          <a href="#" id="find-button" class="btn-large waves-effect waves-light">Find Out More</a>
-        </div>
-        <br><br>
       </div>
+    </div>
+
+    <!--SECTION: BOOKS-->
+    <div id="books" class="center my-section-header amber lighten-3">
+      <h4 class="blue-text text-accent-3">
+        <a id="logo-container" href="#books" class="brand-logo">Books</a>
+      </h4>
+    </div>
+    <br>
+    <div class="container scrollspy" id="books">
+      <p>
+        Many times in college I have tried to read more. Every time it would go
+        something like this: I'd decide on reading, go to the library and
+        check out a book, read it in a couple weeks, return it and never check
+        another again. When 2016 started, I had vaguely heard of the 52 book
+        challenge and decided to do it. I failed miserably. I read five books.
+      </p>
+      <p>
+        But, once I graduated and started working, I had more free time. The
+        lack of homework and something intellectual to do in my evenings, I
+        thought I should take advantage of this and attempt the same challenge
+        again. Things turned out differently. I started reading regularly, and
+        one book at a time, I succeeded. It was almost unbelievable. The feeling
+        was exhilarating. Going from 5 to 55 was incredible.
+      </p>
+      <p>I plan to continue reading at a similar rate (one a week) in 2018 as well</p>
+      <div class="center my-section-header blue accent-3">
+        <h5 id="books" class="amber-text text-lighten-3">2017</h5>
+      </div>
+      <br>
+      <div class="row book-row">
+        <div class="col s2 book-cell"><img src="resources/books/book1.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book2.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book3.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book4.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book5.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book6.jpeg"></div>
+      </div>
+      <div class="row book-row">
+        <div class="col s2 book-cell"><img src="resources/books/book7.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book8.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book9.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book10.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book11.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book12.jpeg"></div>
+      </div>
+      <div class="row book-row">
+        <div class="col s2 book-cell"><img src="resources/books/book13.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book14.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book15.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book16.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book17.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book18.jpeg"></div>
+      </div>
+      <div class="row book-row">
+        <div class="col s2 book-cell"><img src="resources/books/book19.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book20.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book21.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book22.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book23.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book24.jpeg"></div>
+      </div>
+      <div class="row book-row">
+        <div class="col s2 book-cell"><img src="resources/books/book25.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book26.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book27.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book28.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book29.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book30.jpeg"></div>
+      </div>
+      <div class="row book-row">
+        <div class="col s2 book-cell"><img src="resources/books/book31.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book32.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book33.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book34.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book35.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book36.png"></div>
+      </div>
+      <div class="row book-row">
+        <div class="col s2 book-cell"><img src="resources/books/book37.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book38.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book39.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book40.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book41.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book42.jpeg"></div>
+      </div>
+      <div class="row book-row">
+        <div class="col s2 book-cell"><img src="resources/books/book43.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book44.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book45.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book46.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book47.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book48.jpeg"></div>
+      </div>
+      <div class="row book-row">
+        <div class="col s2 book-cell"><img src="resources/books/book49.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book50.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book51.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book52.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book53.jpeg"></div>
+        <div class="col s2 book-cell"><img src="resources/books/book54.jpeg"></div>
+      </div>
+
+      <div class="center my-section-header blue accent-3">
+        <h5 id="books" class="amber-text text-lighten-3">2018</h5>
+      </div>
+      <br>
+    </div>
+
+    <!--SECTION: FOOD-->
+    <div id="books" class="center my-section-header amber lighten-3">
+      <h4>
+        <a id="logo-container" href="#foods" class="brand-logo blue-text text-accent-3">Food</a>
+      </h4>
+    </div>
+    <br>
+    <div class="container scrollspy" id="food">
+      <h5>
+        <a class="btn orange darken-3" href="https://www.instagram.com/kavisherlock/">Instagram</a>
+      </h5>
+    </div>
+
+    <!--SECTION: WORK-->
+    <div id="work" class="center my-section-header amber lighten-3">
+      <h4>
+        <a id="logo-container" href="#work" class="brand-logo blue-text text-accent-3">My Work</a>
+      </h4>
+    </div>
+    <br>
+    <div class="container scrollspy" id="work">
+      <h5>
+        <a class="btn grey darken-2" href="https://github.com/kavisherlock/">GitHub</a>
+      </h5>
+    </div>
+
+    <!--SECTION: ME-->
+    <div id="me" class="center my-section-header amber lighten-3">
+      <h4>
+        <a id="logo-container" href="#me" class="brand-logo blue-text text-accent-3">About Me</a>
+      </h4>
+    </div>
+    <br>
+    <div class="container scrollspy" id="me">
+      <h5>
+        <a class="btn cyan lighten-1" href="https://www.linkedin.com/in/kavish-m-1b090773/">Linkedin</a>
+      </h5>
     </div>
   </body>
 </html>
