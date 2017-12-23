@@ -15,7 +15,7 @@ body {
 }
 
 #index-banner {
-  padding: 3em 5em 0em 2em;
+  padding: 1em 5em 0em 2em;
   text-shadow: 0.5px 0.5px #fff;
   background-image: url("../resources/sherlock.png");
   background-color: rgba(238, 239, 255, 0.5);
@@ -46,4 +46,8 @@ body {
 
 .my-section-header {
   padding: 0.05em 1em 0.05em 1em;
+}
+
+.book-cell {
+  text-align: center;
 }
