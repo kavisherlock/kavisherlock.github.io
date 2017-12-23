@@ -15,14 +15,25 @@ body {
 }
 
 #index-banner {
-  padding-top: 8em;
-  padding-bottom: 8em;
+  padding: 3em 5em 0em 2em;
   text-shadow: 0.5px 0.5px #fff;
   background-image: url("../resources/sherlock.png");
   background-color: rgba(238, 239, 255, 0.5);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right center;
+}
+
+#aboutme {
+  font-size: larger;
+}
+
+.card {
+  background-color: rgba(135, 145, 135, 0.2);
+}
+
+.card-title {
+  color: #222;
 }
 
 .sherlock-quote {
