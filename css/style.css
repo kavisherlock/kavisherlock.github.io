@@ -18,7 +18,7 @@ body {
   padding: 1em 5em 0em 2em;
   text-shadow: 0.5px 0.5px #fff;
   background-image: url("../resources/sherlock.png");
-  background-color: rgba(238, 239, 255, 0.5);
+  background-color: rgba(237, 231, 246, 0.5);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right center;
@@ -50,4 +50,16 @@ body {
 
 .book-cell {
   text-align: center;
+}
+
+.page-footer {
+  height: 20px;
+}
+
+.footer-copyright {
+  height: 20px;
+}
+
+.footer-text {
+  padding-left: 2em;
 }
