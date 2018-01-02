@@ -2,56 +2,56 @@
 <html>
   <head>
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link type='text/css' rel='stylesheet' href='css/materialize.min.css'  media='screen,projection'/>
+    <link type='text/css' rel='stylesheet' href='css/style.css'/>
 
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
   </head>
 
-  <body ng-app="myApp" ng-controller='PanelController as panel'>
+  <body ng-app='myApp' ng-controller='PanelController as panel'>
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="scripts/angular.min.js"></script>
-    <script type="text/javascript" src="scripts/materialize.min.js"></script>
-    <script type="text/javascript" src="scripts/myjs.js"></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script type='text/javascript' src='scripts/angular.min.js'></script>
+    <script type='text/javascript' src='scripts/materialize.min.js'></script>
+    <script type='text/javascript' src='scripts/myjs.js'></script>
 
-    <nav class="nav-extended" role="navigation">
-      <div class="nav-wrapper purple darken-3">
-        <a id="logo-container" href="#" class="brand-logo" ng-click="panel.selectTab(1)">Kavish</a>
-        <a href="#" data-activates="hidden-menu" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul id="hidden-menu" class="side-nav">
-          <li><a href='#books' ng-click="panel.selectTab(2)">Books</a></li>
-          <li><a href='#food' ng-click="panel.selectTab(3)">Food</a></li>
-          <li><a href='#work' ng-click="panel.selectTab(4)">Work</a></li>
-          <li><a href='#me' ng-click="panel.selectTab(5)">Me</a></li>
+    <nav class='nav-extended' role='navigation'>
+      <div class='nav-wrapper purple darken-3'>
+        <a id='logo-container' href='#' class='brand-logo' ng-click='panel.selectTab(1)'>Kavish</a>
+        <a href='#' data-activates='hidden-menu' class='button-collapse'><i class='material-icons'>menu</i></a>
+        <ul id='hidden-menu' class='side-nav'>
+          <li><a href='#books' ng-click='panel.selectTab(2)'>Books</a></li>
+          <li><a href='#food' ng-click='panel.selectTab(3)'>Food</a></li>
+          <li><a href='#work' ng-click='panel.selectTab(4)'>Work</a></li>
+          <li><a href='#me' ng-click='panel.selectTab(5)'>Me</a></li>
         </ul>
-        <ul class="right hide-on-med-and-down">
-          <li><a href='#books' ng-click="panel.selectTab(2)">Books</a></li>
-          <li><a href='#food' ng-click="panel.selectTab(3)">Food</a></li>
-          <li><a href='#work' ng-click="panel.selectTab(4)">Work</a></li>
-          <li><a href='#me' ng-click="panel.selectTab(5)">Me</a></li>
+        <ul class='right hide-on-med-and-down'>
+          <li><a href='#books' ng-click='panel.selectTab(2)'>Books</a></li>
+          <li><a href='#food' ng-click='panel.selectTab(3)'>Food</a></li>
+          <li><a href='#work' ng-click='panel.selectTab(4)'>Work</a></li>
+          <li><a href='#me' ng-click='panel.selectTab(5)'>Me</a></li>
         </ul>
       </div>
     </nav>
 
     <!--SECTION: INDEX-->
-    <div id="home" class="container" ng-show='panel.isSelected(1)'>
-      <div class="section no-pad-bot" id="index-banner">
-        <h2 class="header purple-text">Kavish R.M.</h2>
+    <div id='home' class='container' ng-show='panel.isSelected(1)'>
+      <div class='section no-pad-bot' id='index-banner'>
+        <h2 class='header purple-text'>Kavish R.M.</h2>
         <h5>Software engineer at Cerner Corporation</h5>
         <h5>Graduated from University of Illinois at Urbana-Champaign</h5>
-        <div class="row">
-          <div class="col s3 offset-s6">
+        <div class='row'>
+          <div class='col s3 offset-s6'>
             <p>Thanks for visiting</p>
           </div>
         </div>
         <br><br>
-        <div class="row center">
-          <p class="sherlock-quote col s6 offset-s3 light grey-text text-darken-3">
-            “My mind," he said, "rebels at stagnation.
+        <div class='row center'>
+          <p class='sherlock-quote col s6 offset-s3 light grey-text text-darken-3'>
+            “My mind,' he said, 'rebels at stagnation.
             Give me problems, give me work, give me the most abstruse cryptogram or the most intricate analysis, and I am in my own proper atmosphere.
             I can dispense then with artificial stimulants.
             But I abhor the dull routine of existence.
@@ -64,12 +64,12 @@
     </div>
 
     <!--SECTION: BOOKS-->
-    <div id="books" class="panel" ng-show='panel.isSelected(2)'>
-      <div class="center my-section-header deep-purple lighten-5">
-        <h4 class="brand-logo purple-text text-darken-3">Books</h4>
+    <div id='books' class='panel' ng-show='panel.isSelected(2)'>
+      <div class='center my-section-header deep-purple lighten-5'>
+        <h4 class='brand-logo purple-text text-darken-3'>Books</h4>
       </div>
       <br>
-      <div class="container">
+      <div class='container'>
         <p>
           Many times in college I have tried to read more. Every time it would go
           something like this: I'd decide on reading, go to the library and
@@ -86,149 +86,152 @@
           was exhilarating. Going from 5 to 55 was incredible.
         </p>
         <p>I plan to continue reading at a similar rate (one a week) in 2018 as well</p>
-        <div class="center my-section-header purple darken-3">
-          <h5 class="deep-purple-text text-lighten-5">2017</h5>
+        <div class='center my-section-header purple darken-3'>
+          <h5 class='deep-purple-text text-lighten-5'>2017</h5>
         </div>
         <br>
-        <div class="row book-row">
-          <div class="col s2 book-cell"><img src="resources/books/book1.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book2.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book3.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book4.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book5.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book6.jpeg"></div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book1.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book2.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book3.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book4.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book5.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book6.jpeg'></div>
         </div>
-        <div class="row book-row">
-          <div class="col s2 book-cell"><img src="resources/books/book7.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book8.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book9.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book10.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book11.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book12.jpeg"></div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book7.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book8.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book9.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book10.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book11.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book12.jpeg'></div>
         </div>
-        <div class="row book-row">
-          <div class="col s2 book-cell"><img src="resources/books/book13.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book14.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book15.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book16.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book17.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book18.jpeg"></div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book13.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book14.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book15.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book16.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book17.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book18.jpeg'></div>
         </div>
-        <div class="row book-row">
-          <div class="col s2 book-cell"><img src="resources/books/book19.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book20.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book21.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book22.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book23.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book24.jpeg"></div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book19.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book20.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book21.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book22.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book23.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book24.jpeg'></div>
         </div>
-        <div class="row book-row">
-          <div class="col s2 book-cell"><img src="resources/books/book25.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book26.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book27.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book28.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book29.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book30.jpeg"></div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book25.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book26.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book27.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book28.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book29.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book30.jpeg'></div>
         </div>
-        <div class="row book-row">
-          <div class="col s2 book-cell"><img src="resources/books/book31.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book32.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book33.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book34.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book35.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book36.png"></div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book31.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book32.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book33.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book34.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book35.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book36.png'></div>
         </div>
-        <div class="row book-row">
-          <div class="col s2 book-cell"><img src="resources/books/book37.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book38.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book39.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book40.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book41.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book42.jpeg"></div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book37.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book38.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book39.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book40.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book41.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book42.jpeg'></div>
         </div>
-        <div class="row book-row">
-          <div class="col s2 book-cell"><img src="resources/books/book43.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book44.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book45.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book46.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book47.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book48.jpeg"></div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book43.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book44.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book45.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book46.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book47.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book48.jpeg'></div>
         </div>
-        <div class="row book-row">
-          <div class="col s2 book-cell"><img src="resources/books/book49.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book50.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book51.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book52.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book53.jpeg"></div>
-          <div class="col s2 book-cell"><img src="resources/books/book54.jpeg"></div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book49.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book50.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book51.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book52.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book53.jpeg'></div>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book54.jpeg'></div>
+        </div>
+        <div class='row book-row'>
+          <div class='col s12 m6 l2 book-cell'><img src='resources/books/book55.jpeg'></div>
         </div>
 
-        <div class="center my-section-header purple darken-3">
-          <h5 class="deep-purple-text text-lighten-5">2018</h5>
+        <div class='center my-section-header purple darken-3'>
+          <h5 class='deep-purple-text text-lighten-5'>2018</h5>
         </div>
         <br>
       </div>
     </div>
 
     <!--SECTION: FOOD-->
-    <div id="food" class="panel" ng-show='panel.isSelected(3)'>
-      <div class="center my-section-header deep-purple lighten-5">
-        <h4 class="brand-logo purple-text text-darken-3">Food</h4>
+    <div id='food' class='panel' ng-show='panel.isSelected(3)'>
+      <div class='center my-section-header deep-purple lighten-5'>
+        <h4 class='brand-logo purple-text text-darken-3'>Food</h4>
       </div>
       <br>
-      <div class="container">
-        <div class="row">
-          <div class="col s6 offset-s2">
-            <img src="resources/underConstruction.png">
+      <div class='container'>
+        <div class='row'>
+          <div class='col s6 offset-s2'>
+            <img src='resources/underConstruction.png'>
           </div>
         </div>
 
         <h5>
-          <a class="btn orange darken-3" href="https://www.instagram.com/kavisherlock/">Instagram</a>
+          <a class='btn orange darken-3' href='https://www.instagram.com/kavisherlock/'>Instagram</a>
         </h5>
       </div>
     </div>
 
     <!--SECTION: WORK-->
-    <div id="work" class="panel" ng-show='panel.isSelected(4)'>
-      <div class="center my-section-header deep-purple lighten-5">
-        <h4 class="brand-logo purple-text text-darken-3">My Work</h4>
+    <div id='work' class='panel' ng-show='panel.isSelected(4)'>
+      <div class='center my-section-header deep-purple lighten-5'>
+        <h4 class='brand-logo purple-text text-darken-3'>My Work</h4>
       </div>
       <br>
-      <div class="container">
-        <div class="row">
-          <div class="col s6 offset-s2">
-            <img src="resources/underConstruction.png">
+      <div class='container'>
+        <div class='row'>
+          <div class='col s6 offset-s2'>
+            <img src='resources/underConstruction.png'>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col s6" id="aboutme">
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">Front-End Development</span>
+        <div class='row'>
+          <div class='col s6' id='aboutme'>
+            <div class='card'>
+              <div class='card-content'>
+                <span class='card-title'>Front-End Development</span>
                 <p>Love Ruby on Rails. Love ReactJS. They're straight-forward and easy to control.</p>
               </div>
             </div>
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">Windows Development</span>
+            <div class='card'>
+              <div class='card-content'>
+                <span class='card-title'>Windows Development</span>
                 <p>If you can't program in C++, can you really call yourself a programmer?
                   P.S: C#'s better for making windows apps</p>
               </div>
             </div>
           </div>
-          <div class="col s6 offset s6" id="aboutme">
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">Machine Learning and Robotics</span>
+          <div class='col s6 offset s6' id='aboutme'>
+            <div class='card'>
+              <div class='card-content'>
+                <span class='card-title'>Machine Learning and Robotics</span>
                 <p>Learning all about neural networks since they're awesome.
                   The goal is to make a Chess engine that learns through self-play</p>
               </div>
             </div>
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">Astronomy and Physics</span>
+            <div class='card'>
+              <div class='card-content'>
+                <span class='card-title'>Astronomy and Physics</span>
                 <p>Minored in astronomy in college, and trying to keep up with physics today. Also Maths.</p>
               </div>
             </div>
@@ -236,37 +239,37 @@
         </div>
 
         <h5>
-          <a class="btn grey darken-2" href="https://github.com/kavisherlock/">GitHub</a>
+          <a class='btn grey darken-2' href='https://github.com/kavisherlock/'>GitHub</a>
         </h5>
       </div>
     </div>
 
     <!--SECTION: ME-->
-    <div id="me" class="panel" ng-show='panel.isSelected(5)'>
-      <div class="center my-section-header deep-purple lighten-5">
-        <h4 class="brand-logo purple-text text-darken-3">About Me</h4>
+    <div id='me' class='panel' ng-show='panel.isSelected(5)'>
+      <div class='center my-section-header deep-purple lighten-5'>
+        <h4 class='brand-logo purple-text text-darken-3'>About Me</h4>
       </div>
       <br>
-      <div class="container">
-        <div class="row">
-          <div class="col s6 offset-s2">
-            <img src="resources/underConstruction.png">
+      <div class='container'>
+        <div class='row'>
+          <div class='col s6 offset-s2'>
+            <img src='resources/underConstruction.png'>
           </div>
         </div>
 
         <h5>
-          <a class="btn cyan lighten-1" href="https://www.linkedin.com/in/kavish-m-1b090773/">Linkedin</a>
+          <a class='btn cyan lighten-1' href='https://www.linkedin.com/in/kavish-m-1b090773/'>Linkedin</a>
         </h5>
       </div>
     </div>
   </body>
 
-  <footer class="page-footer purple lighten-5">
-    <div class="footer-copyright">
-      <div class="footer-text deep-purple-text text-darken-3">
+  <footer class='page-footer purple lighten-5'>
+    <div class='footer-copyright'>
+      <div class='footer-text deep-purple-text text-darken-3'>
         © 2017 Kavish R. Munjal
         <div>
-          <a href="https://www.linkedin.com/in/kavish-m-1b090773/">Contact</a>
+          <a href='https://www.linkedin.com/in/kavish-m-1b090773/'>Contact</a>
         </div>
       </div>
     </div>
