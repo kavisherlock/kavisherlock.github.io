@@ -15,10 +15,9 @@ body {
 }
 
 #index-banner {
-  padding: 1em 5em 0em 2em;
+  padding: 3em;
   text-shadow: 0.5px 0.5px #fff;
   background-image: url("../resources/sherlock.png");
-  background-color: rgba(237, 231, 246, 0.5);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right center;
@@ -26,6 +25,10 @@ body {
 
 #aboutme {
   font-size: larger;
+}
+
+#books, #work, #me, .book-row {
+  display: none;
 }
 
 .card {
@@ -38,10 +41,6 @@ body {
 
 .sherlock-quote {
   font-weight: bolder;
-}
-
-#find-button {
-  background-color: rgba(179, 136, 255, 0.75);
 }
 
 .my-section-header {

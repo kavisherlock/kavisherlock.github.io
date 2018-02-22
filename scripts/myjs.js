@@ -1,30 +1,51 @@
-$( document ).ready(function() {
-    $(".button-collapse").sideNav();
-    $('.scrollspy').scrollSpy();
-});
+/* Global Variables */
+var currentBooksYear = 0;
 
-var app = angular.module('myApp', []);
-app.value('appName', 'MyWebsite');
+/* OnLoad function */
+window.onload = function() {
+  $(".button-collapse").sideNav();
+  var myUrl = window.location.href;
 
-app.controller('PanelController', function($location) {
-  this.tab = 1;
-  this.myUrl = $location.absUrl();
-  if (this.myUrl.search('#books') !== -1) {
-    this.tab = 2;
-  } else if (this.myUrl.search('#food') !== -1) {
-    this.tab = 3;
-  } else if (this.myUrl.search('#work') !== -1) {
-    this.tab = 4;
-  } else if (this.myUrl.search('#me') !== -1) {
-    this.tab = 5;
+  var idIndex = myUrl.lastIndexOf('#');
+  var idInUrl = myUrl.substring(idIndex);
+  if (idIndex > 0 && idInUrl !== "#") {
+    hideAll();
+    $(idInUrl).show();
+
+    if(idInUrl.includes("books")) {
+      toggleBooks(2018);
+    }
+  }
+};
+
+/* General functions */
+function hideAll() {
+  $("#home").hide();
+  $("#books").hide();
+  $("#work").hide();
+  $("#me").hide();
+}
+
+function selectTab(showSection) {
+  hideAll();
+  $(`#${showSection}`).fadeIn();
+}
+
+/* Books */
+function toggleBooks(year) {
+  console.log(year, currentBooksYear);
+  $('.book-row').each(function(i, obj) {
+    $(this).slideUp();
+  });
+
+  if (year === currentBooksYear) {
+    currentBooksYear = 0;
+    return;
   }
 
-  this.selectTab = function(setTab) {
-    this.tab = setTab;
-  }
+  $(`.book-row-${year}`).each(function(i, obj) {
+    $(this).slideDown();
+  });
 
-  this.isSelected = function(checkTab) {
-    this.myUrl = $location.absUrl();
-    return this.tab === checkTab;
-  }
-});
+  currentBooksYear = year;
+}
