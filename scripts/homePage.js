@@ -65,7 +65,7 @@ $(document).ready(function(){
 		message += String.fromCharCode(e.which);
 	});
 
-  animators.push(new StartMessage('Kavish'));
+  animators.push(new StartMessage('Welcome'));
 	t = setInterval('tick()', 30);
 });
 
@@ -149,13 +149,10 @@ function Block(context, x, y) {
       this.ink--;
     }
 
-		// If the ink is 0, return to white
+		// If the ink is 0, return to base
 		if (this.ink == 0) {
       this.colour.stepTowardsColour(baseColour);
     }
-
-		// Change the size of the el
-		sizeDiff = Math.round(15 * (this.ink / this.grid.maxInk));
 	}
 
   this.draw = function() {
