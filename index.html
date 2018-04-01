@@ -1,233 +1,29 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <!--Import Google Icon Font-->
-    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
-    <!--Import materialize.css-->
-    <link type='text/css' rel='stylesheet' href='css/materialize.min.css'  media='screen,projection'/>
-    <link type='text/css' rel='stylesheet' href='css/style.css'/>
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <title>Kavish</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="initial-scale = 1.0" />
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/homePage.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
+  <body class="home">
+    <header class="fluid">
+      <h1 id="title"><a href="/">Kavish</a></h1>
 
-  <body>
-    <!--Import jQuery before materialize.js-->
-    <script type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-    <script type='text/javascript' src='scripts/materialize.min.js'></script>
-    <script type='text/javascript' src='scripts/myjs.js'></script>
-
-    <nav class='nav-extended' role='navigation'>
-      <div class='nav-wrapper brown darken-1'>
-        <a id='logo-container' href='#' class='brand-logo' onclick='selectTab("home")'>Kavish</a>
-        <a href='#' data-activates='hidden-menu' class='button-collapse'><i class='material-icons'>menu</i></a>
-        <ul id='hidden-menu' class='side-nav'>
-          <li><a href='#books' onclick='selectTab("books")'>Books</a></li>
-          <li><a href='#work' onclick='selectTab("work")'>Work</a></li>
-          <li><a href='#me' onclick='selectTab("me")'>Me</a></li>
-        </ul>
-        <ul class='right hide-on-med-and-down'>
-          <li><a href='#books' onclick='selectTab("books")'>Books</a></li>
-          <li><a href='#work' onclick='selectTab("work")'>Work</a></li>
-          <li><a href='#me' onclick='selectTab("me")'>Me</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!--SECTION: INDEX-->
-    <div id='home' class='panel container'>
-      <div class='section brown lighten-5 blue-grey-text text-darken-2' id='index-banner'>
-        <h2 class='header brown-text text-darken-2'>Kavish R. M.</h2>
-        <h5>Software engineer at Cerner Corporation</h5>
-        <h5>Graduated from University of Illinois at Urbana-Champaign</h5>
-        <h5>I code. I read. I run. I also <a href="http://www.kavishrm.wordpress.com" target="_blank">Blog</a> occassionally</h5>
-        <br><br>
-      </div>
-    </div>
-
-    <!--SECTION: BOOKS-->
-    <div id='books' class='panel'>
-      <div class='center my-section-header brown lighten-5'>
-        <h4 class='brand-logo brown-text text-darken-3'>Books</h4>
-      </div>
-      <br>
-      <div class='container'>
-        <p>
-          Many times in college I have tried to read more. Every time it would go
-          something like this: I'd decide on reading, go to the library and
-          check out a book, read it in a couple weeks, return it and never check
-          another again. When 2016 started, I had vaguely heard of the 52 book
-          challenge and decided to do it. I failed miserably. I read five books.
-        </p>
-        <p>
-          But, once I graduated and started working, I had more free time. The
-          lack of homework and something intellectual to do in my evenings, I
-          thought I should take advantage of this and attempt the same challenge
-          again. Things turned out differently. I started reading regularly, and
-          one book at a time, I succeeded. It was almost unbelievable. The feeling
-          was exhilarating. Going from 5 to 55 was incredible.
-        </p>
-        <div class='center my-section-header brown darken-3 2018-book-header' onclick='toggleBooks("2018")'>
-          <h5 class='brown-text text-lighten-5'>2018</h5>
-        </div>
-        <br>
-        <div class='row book-row book-row-2018'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2018/book1.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2018/book2.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2018/book3.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2018/book4.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2018/book5.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2018/book6.jpeg'></div>
-        </div>
-        <div class='row book-row book-row-2018'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2018/book7.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2018/book8.jpeg'></div>
-        </div>
-        <br>
-        <div class='center my-section-header brown darken-3 2017-book-header' onclick='toggleBooks("2017")'>
-          <h5 class='brown-text text-lighten-5'>2017</h5>
-        </div>
-        <br>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book1.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book2.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book3.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book4.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book5.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book6.jpeg'></div>
-        </div>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book7.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book8.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book9.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book10.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book11.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book12.jpeg'></div>
-        </div>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book13.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book14.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book15.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book16.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book17.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book18.jpeg'></div>
-        </div>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book19.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book20.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book21.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book22.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book23.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book24.jpeg'></div>
-        </div>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book25.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book26.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book27.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book28.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book29.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book30.jpeg'></div>
-        </div>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book31.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book32.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book33.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book34.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book35.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book36.png'></div>
-        </div>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book37.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book38.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book39.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book40.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book41.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book42.jpeg'></div>
-        </div>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book43.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book44.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book45.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book46.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book47.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book48.jpeg'></div>
-        </div>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book49.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book50.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book51.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book52.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book53.jpeg'></div>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book54.jpeg'></div>
-        </div>
-        <div class='row book-row book-row-2017'>
-          <div class='col s12 m6 l2 book-cell'><img src='resources/books/2017/book55.jpeg'></div>
-        </div>
-      </div>
-    </div>
-
-    <!--SECTION: WORK-->
-    <div id='work' class='panel'>
-      <div class='center my-section-header brown lighten-5'>
-        <h4 class='brand-logo brown-text text-darken-3'>My Work</h4>
-      </div>
-      <br>
-      <div class='container'>
-        <div class='row'>
-          <div class='col s6' id='aboutme'>
-            <div class='card'>
-              <div class='card-content'>
-                <span class='card-title'>Front-End Development</span>
-                <p>Love Ruby on Rails. Love ReactJS. They're straight-forward and easy to control.</p>
-              </div>
-            </div>
-            <div class='card'>
-              <div class='card-content'>
-                <span class='card-title'>Windows Development</span>
-                <p>If you can't program in C++, can you really call yourself a programmer?
-                  P.S: C#'s better for making windows apps</p>
-              </div>
-            </div>
-          </div>
-          <div class='col s6 offset s6' id='aboutme'>
-            <div class='card'>
-              <div class='card-content'>
-                <span class='card-title'>Machine Learning and Robotics</span>
-                <p>Learning all about neural networks since they're awesome.
-                  The goal is to make a Chess engine that learns through self-play</p>
-              </div>
-            </div>
-            <div class='card'>
-              <div class='card-content'>
-                <span class='card-title'>Mathematics</span>
-                <p>The base of all sciences and tech and by far the coolest subject there is</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h5>
-          <a class='btn brown darken-2' href='https://github.com/kavisherlock/'>GitHub</a>
-        </h5>
-      </div>
-    </div>
-
-    <!--SECTION: ME-->
-    <div id='me' class='panel'>
-      <div class='center my-section-header brown lighten-5'>
-        <h4 class='brand-logo brown-text text-darken-3'>About Me</h4>
-      </div>
-      <br>
-      <div class='container'>
-        <div class='row'>
-          <div class='col s6 offset-s3'>
-            <img src='resources/underConstruction.png'>
-          </div>
-        </div>
-
-        <h5>
-          <a class='btn cyan lighten-1' href='https://www.linkedin.com/in/kavish-m-1b090773/'>Linkedin</a>
-        </h5>
+      <ul id="main-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/work">Work</a></li>
+        <li><a href="/photography">Photography</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </header>
+    <div id="content" class="fluid translucent">
+      <div class="content-inner">
+        <canvas id="nameCanvas" width="500" height="550" style="position: relative; left: 50%; margin-left: -250px;"></canvas>
+        <p>Try moving your mouse over it, clicking, or typing</p>
       </div>
     </div>
   </body>
