@@ -1,195 +1,198 @@
 $(document).ready(function(){
-	nameCanvas = $('#nameCanvas');
-	canvasContext = document.getElementById('nameCanvas').getContext('2d');
-	colourMode = false;
+  nameCanvas = $('#nameCanvas');
+  canvasContext = document.getElementById('nameCanvas').getContext('2d');
+  colourMode = false;
   targetColour = new Colour(147,112,219);
-	colToUse = new Colour(222, 222, 222);
-	baseColour = new Colour(230, 230, 230);
+  colToUse = new Colour(120, 180, 222);
+  baseColour = new Colour(150, 200, 230);
   lastX = -1; // Last hit coords
-	lastY = -1;
+  lastY = -1;
   animators = Array();
   grid = new Grid(17, 16);
-	grid.initialise();
+  grid.initialise();
 
   nameCanvas.mousemove( function(e) {
-			var x = e.pageX - $(this).offset().left;
-			var y = e.pageY - $(this).offset().top;
+      var x = e.pageX - $(this).offset().left;
+      var y = e.pageY - $(this).offset().top;
 
-			x = Math.floor(x / grid.totalBlockWidth);
-			y = Math.floor(y / grid.totalBlockWidth);
+      x = Math.floor(x / grid.totalBlockWidth);
+      y = Math.floor(y / grid.totalBlockWidth);
 
-			// Check we're not out of bounds
-			if (x > (grid.cols - 1) || y > (grid.rows -1)) return;
-			if (x < 0 || y < 0) return;
+      // Check we're not out of bounds
+      if (x > (grid.cols - 1) || y > (grid.rows -1)) return;
+      if (x < 0 || y < 0) return;
 
-			if (lastX != x || lastY != y){
-				grid.blocks[y][x].hit();
-				lastX = x;
-				lastY = y;
-			}
-	});
+      if (lastX != x || lastY != y){
+        grid.blocks[y][x].hit();
+        lastX = x;
+        lastY = y;
+      }
+  });
 
-	nameCanvas.click(function(e) {
-			var x = e.pageX - $(this).offset().left;
-			var y = e.pageY - $(this).offset().top;
-			x = Math.floor(x / grid.totalBlockWidth);
-			y = Math.floor(y / grid.totalBlockWidth);
+  nameCanvas.click(function(e) {
+      var x = e.pageX - $(this).offset().left;
+      var y = e.pageY - $(this).offset().top;
+      x = Math.floor(x / grid.totalBlockWidth);
+      y = Math.floor(y / grid.totalBlockWidth);
 
-			// Check we're not out of bounds
-			if (x > (grid.cols - 1) || y > (grid.rows -1)) return;
-			if (x < 0 || y < 0) return;
+      // Check we're not out of bounds
+      if (x > (grid.cols - 1) || y > (grid.rows -1)) return;
+      if (x < 0 || y < 0) return;
 
-			if (x % 3 == 0 && y % 5 == 0) { //some fun
-				autoAdd(50);
-			}
-			else if (x == 0 && y == 16) { // bottom left changes colour mode
-				colourMode = !colourMode
-			}
-			grid.blocks[y][x].hit();
-	});
+      if (x % 3 == 0 && y % 5 == 0) { //some fun
+        autoAdd(50);
+      }
+      else if (x == 0 && y == 16) { // bottom left changes colour mode
+        colourMode = !colourMode
+      }
+      grid.blocks[y][x].hit();
+  });
 
-	$(document).keypress( function(e) {
-		if (e.which == 13 && message != '')  {
-			messageAnimation = new StartMessage(message);
-			animators.push(messageAnimation);
-			message = '';
-			return;
-		}
+  $(document).keypress( function(e) {
+    if (e.which == 13 && message != '')  {
+      messageAnimation = new StartMessage(message);
+      animators.push(messageAnimation);
+      message = '';
+      return;
+    }
 
-		if (typeof messageAnimation != 'undefined') {
-			messageAnimation.stop();
-			delete messageAnimation;
-		}
+    if (typeof messageAnimation != 'undefined') {
+      messageAnimation.stop();
+      delete messageAnimation;
+    }
 
-		renderLetter(String.fromCharCode(e.which));
-		message += String.fromCharCode(e.which);
-	});
+    renderLetter(String.fromCharCode(e.which));
+    message += String.fromCharCode(e.which);
+  });
 
   animators.push(new StartMessage('Welcome'));
-	t = setInterval('tick()', 30);
+  t = setInterval('tick()', 30);
 });
 
 
-/* Primary Objects */
+/* Colour */
 function Colour(r, g, b) {
   this.r = r;
-	this.g = g;
-	this.b = b;
-
-  this.copy = function(other) {
-    this.r = other.r;
-    this.g = other.g;
-    this.b = other.b;
-  }
-
-  this.equals = function(other) {
-    return ((this.r === other.r) && (this.g === other.g) && (this.b === other.b));
-  }
-
-  this.add = function(n) {
-    this.r = Math.min(255, this.r + n);
-    this.g = Math.min(255, this.g + n);
-    this.b = Math.min(255, this.b + n);
-	}
-
-  this.toRgba = function(alpha) {
-		return 'rgba(' + this.r + ', ' + this.g + ', ' + this.b + ', ' + alpha + ')';
-	}
-
-  this.stepTowardsColour = function(other) {
-    if (this.r < other.r) this.r++;
-  	else if (this.r > other.r) this.r--;
-
-  	if (this.g < other.g) this.g++;
-  	else if (this.g > other.g) this.g--;
-
-  	if (this.b < other.b) this.b++;
-  	else if (this.b > other.b) this.b--;
-  }
+  this.g = g;
+  this.b = b;
 }
 
+Colour.prototype.copy = function(other) {
+  this.r = other.r;
+
+  this.g = other.g;
+  this.b = other.b;
+}
+
+Colour.prototype.equals = function(other) {
+  return ((this.r === other.r) && (this.g === other.g) && (this.b === other.b));
+}
+
+Colour.prototype.add = function(n) {
+  this.r = Math.min(255, this.r + n);
+  this.g = Math.min(255, this.g + n);
+  this.b = Math.min(255, this.b + n);
+}
+
+Colour.prototype.toRgba = function(alpha) {
+  return 'rgba(' + this.r + ', ' + this.g + ', ' + this.b + ', ' + alpha + ')';
+}
+
+Colour.prototype.stepTowardsColour = function(other) {
+  if (this.r < other.r) this.r++;
+  else if (this.r > other.r) this.r--;
+
+  if (this.g < other.g) this.g++;
+  else if (this.g > other.g) this.g--;
+
+  if (this.b < other.b) this.b++;
+  else if (this.b > other.b) this.b--;
+}
+
+/* Block */
 function Block(context, x, y) {
   this.x = x;
-	this.y = y;
+  this.y = y;
   this.neighbours = Array();
   this.colour = getColourToUse();
   this.rotate = 0;
   this.ctx = context;
   this.ink = 0;
   this.grid = grid;
-	this.xPixels = x * grid.totalBlockWidth;
-	this.yPixels = y * grid.totalBlockWidth;
-
-  this.setNeighbours = function(neighbours) {
-    this.neighbours = neighbours;
-  }
-
-  this.hit = function() {
-    this.colour.copy(getColourToUse());
-    this.ink = 200;
-    this.rotate = 1;
-  }
-
-  this.doThings = function() {
-		// Work out which neighbour has the most ink
-		var bestNeighbour = this.neighbours[0];
-		for (index = 1; index < this.neighbours.length; index ++) {
-			if (this.neighbours[index].ink > bestNeighbour.ink) {
-        bestNeighbour = this.neighbours[index];
-      }
-		}
-
-		// Only do something if the best neighbour has more ink than me
-		if (bestNeighbour.ink > this.ink && bestNeighbour.ink > 1) {
-			this.colour.stepTowardsColour(bestNeighbour.colour);
-			this.ink = Math.round(bestNeighbour.ink * 0.7) ;
-			bestNeighbour.ink = Math.max(0, (bestNeighbour.ink - Math.round(this.ink / 50)));
-		}
-		else if (this.ink > 0) {
-      this.ink--;
-    }
-
-		// If the ink is 0, return to base
-		if (this.ink == 0) {
-      this.colour.stepTowardsColour(baseColour);
-    }
-	}
-
-  this.draw = function() {
-		var ctx = this.ctx;
-
-		borderColour = new Colour(this.colour.r, this.colour.g, this.colour.b);
-		borderColour.add(20);
-
-		ctx.fillStyle = this.colour.toRgba(1);
-		ctx.strokeStyle = 'rgba(255,255,255, 0.2)';
-
-		ctx.save();
-
-		ctx.translate((this.xPixels) + this.grid.halfBlockWidth - 248, (this.yPixels) + this.grid.halfBlockWidth - 248);
-		if (this.rotate > 0) {
-      ctx.rotate((Math.PI / 180) * this.rotate);
-    }
-		ctx.fillRect (-this.grid.halfBlockWidth, -this.grid.halfBlockWidth, this.grid.blockWidth , this.grid.blockWidth);
-
-		sizeDiff = Math.round((Math.floor(this.grid.blockWidth / 2)) * (this.ink / this.grid.maxInk));
-
-		ctx.lineWidth = sizeDiff;
-
-		if (sizeDiff > 0) {
-      ctx.strokeRect(-this.grid.halfBlockWidth + (sizeDiff / 2), -this.grid.halfBlockWidth + (sizeDiff / 2), this.grid.blockWidth - (sizeDiff), this.grid.blockWidth - (sizeDiff));
-    }
-
-		if (this.rotate > 0) {
-      this.rotate += 10;
-    }
-		if (this.rotate > 90) {
-      this.rotate = 0;
-    }
-		ctx.restore();
-	}
+  this.xPixels = x * grid.totalBlockWidth;
+  this.yPixels = y * grid.totalBlockWidth;
 }
 
+Block.prototype.setNeighbours = function(neighbours) {
+  this.neighbours = neighbours;
+}
+
+Block.prototype.hit = function() {
+  this.colour.copy(getColourToUse());
+  this.ink = 200;
+  this.rotate = 1;
+}
+
+Block.prototype.doThings = function() {
+  // Work out which neighbour has the most ink
+  var bestNeighbour = this.neighbours[0];
+  for (index = 1; index < this.neighbours.length; index ++) {
+    if (this.neighbours[index].ink > bestNeighbour.ink) {
+      bestNeighbour = this.neighbours[index];
+    }
+  }
+
+  // Only do something if the best neighbour has more ink than me
+  if (bestNeighbour.ink > this.ink && bestNeighbour.ink > 1) {
+    this.colour.stepTowardsColour(bestNeighbour.colour);
+    this.ink = Math.round(bestNeighbour.ink * 0.7) ;
+    bestNeighbour.ink = Math.max(0, (bestNeighbour.ink - Math.round(this.ink / 50)));
+  }
+  else if (this.ink > 0) {
+    this.ink--;
+  }
+
+  // If the ink is 0, return to base
+  if (this.ink == 0) {
+    this.colour.stepTowardsColour(baseColour);
+  }
+}
+
+Block.prototype.draw = function() {
+  var ctx = this.ctx;
+
+  borderColour = new Colour(this.colour.r, this.colour.g, this.colour.b);
+  borderColour.add(20);
+
+  ctx.fillStyle = this.colour.toRgba(1);
+  ctx.strokeStyle = 'rgba(255,255,255, 0.2)';
+
+  ctx.save();
+
+  ctx.translate((this.xPixels) + this.grid.halfBlockWidth - 248, (this.yPixels) + this.grid.halfBlockWidth - 248);
+  if (this.rotate > 0) {
+    ctx.rotate((Math.PI / 180) * this.rotate);
+  }
+  ctx.fillRect (-this.grid.halfBlockWidth, -this.grid.halfBlockWidth, this.grid.blockWidth , this.grid.blockWidth);
+
+  sizeDiff = Math.round((Math.floor(this.grid.blockWidth / 2)) * (this.ink / this.grid.maxInk));
+
+  ctx.lineWidth = sizeDiff;
+
+  if (sizeDiff > 0) {
+    ctx.strokeRect(-this.grid.halfBlockWidth + (sizeDiff / 2), -this.grid.halfBlockWidth + (sizeDiff / 2), this.grid.blockWidth - (sizeDiff), this.grid.blockWidth - (sizeDiff));
+  }
+
+  if (this.rotate > 0) {
+    this.rotate += 10;
+  }
+  if (this.rotate > 90) {
+    this.rotate = 0;
+  }
+  ctx.restore();
+}
+
+/* Grid */
 function Grid(r, c) {
   this.rows = r;
   this.cols = c;
@@ -204,34 +207,34 @@ function Grid(r, c) {
 
   this.initialise = function() {
     // initialise the blocks
-		for (rows = 0; rows < this.rows; rows ++) {
-			row = new Array;
-			for (cols = 0; cols < this.cols; cols ++) {
-				row[cols] = new Block(canvasContext, cols, rows, this);
-			}
-			this.blocks[rows] = row;
-		}
+    for (rows = 0; rows < this.rows; rows ++) {
+      row = new Array;
+      for (cols = 0; cols < this.cols; cols ++) {
+        row[cols] = new Block(canvasContext, cols, rows, this);
+      }
+      this.blocks[rows] = row;
+    }
 
-		// Loop through all the blocks and assign neighbours
-		for (rows = 0; rows < this.rows; rows ++) {
-			for (cols = 0; cols < this.cols; cols ++) {
-				neighbours = Array();
-				if (cols < (this.cols - 2)) {
-					neighbours.push(this.blocks[rows][cols + 1]);
-				}
-				if (rows < (this.rows - 2)) {
-					neighbours.push(this.blocks[rows + 1][cols]);
-				}
-				if (cols > 0) {
-					neighbours.push(this.blocks[rows][cols - 1]);
-				}
-				if (rows > 0) {
-					neighbours.push(this.blocks[rows - 1][cols]);
-				}
-				this.blocks[rows][cols].setNeighbours(neighbours);
-				this.blocksSequence.push(this.blocks[rows][cols]);
-			}
-		}
+    // Loop through all the blocks and assign neighbours
+    for (rows = 0; rows < this.rows; rows ++) {
+      for (cols = 0; cols < this.cols; cols ++) {
+        neighbours = Array();
+        if (cols < (this.cols - 2)) {
+          neighbours.push(this.blocks[rows][cols + 1]);
+        }
+        if (rows < (this.rows - 2)) {
+          neighbours.push(this.blocks[rows + 1][cols]);
+        }
+        if (cols > 0) {
+          neighbours.push(this.blocks[rows][cols - 1]);
+        }
+        if (rows > 0) {
+          neighbours.push(this.blocks[rows - 1][cols]);
+        }
+        this.blocks[rows][cols].setNeighbours(neighbours);
+        this.blocksSequence.push(this.blocks[rows][cols]);
+      }
+    }
   }
 }
 
@@ -239,40 +242,40 @@ function Grid(r, c) {
 function StartMessage(message) {
   this.message = message.toLowerCase();
   this.msgIndex = 0;
-	this.timer = null;
+  this.timer = null;
 
   var self = this;
-	this.timer = setInterval(function() {self.tick();}, 300);
+  this.timer = setInterval(function() {self.tick();}, 300);
 
   this.tick = function() {
-		if (this.message[this.msgIndex].match(/[a-z]/i) || this.message[this.msgIndex].match(/[0-9]/i)) {
-			renderLetter(this.message[this.msgIndex]);
-		}
-		this.msgIndex++;
-
-		if (this.msgIndex >= this.message.length) {
-      clearInterval(this.timer);
-			colourMode = true;
+    if (this.message[this.msgIndex].match(/[a-z]/i) || this.message[this.msgIndex].match(/[0-9]/i)) {
+      renderLetter(this.message[this.msgIndex]);
     }
-	}
+    this.msgIndex++;
 
-	this.stop = function() {
-		clearInterval(this.timer);
-		colourMode = true;
-	}
+    if (this.msgIndex >= this.message.length) {
+      clearInterval(this.timer);
+      colourMode = true;
+    }
+  }
+
+  this.stop = function() {
+    clearInterval(this.timer);
+    colourMode = true;
+  }
 }
 
 /* Helper methods */
 function tick() {
-	canvasContext.clearRect(0, 0, 600, 600);
-	canvasContext.save();
-	canvasContext.translate(250, 250);
+  canvasContext.clearRect(0, 0, 600, 600);
+  canvasContext.save();
+  canvasContext.translate(250, 250);
 
-	for (block = 0; block < grid.blocksSequence.length; block ++) {
-		grid.blocksSequence[block].doThings();
-		grid.blocksSequence[block].draw();
-	}
-	canvasContext.restore();
+  for (block = 0; block < grid.blocksSequence.length; block ++) {
+    grid.blocksSequence[block].doThings();
+    grid.blocksSequence[block].draw();
+  }
+  canvasContext.restore();
 }
 
 function rand (n) {
@@ -280,14 +283,14 @@ function rand (n) {
 }
 
 function getColourToUse() {
-	if (colToUse.equals(targetColour)) {
-		if(colourMode) {
-			targetColour = new Colour(rand(255), rand(255),rand(255));
-		}
-		else {
-			r = 255 - rand(200);
-			targetColour = new Colour(r, r, r);
-		}
+  if (colToUse.equals(targetColour)) {
+    if(colourMode) {
+      targetColour = new Colour(rand(255), rand(255),rand(255));
+    }
+    else {
+      r = 255 - rand(200);
+      targetColour = new Colour(r, r, r);
+    }
   }
   colToUse.stepTowardsColour(targetColour);
   colToUse = new Colour(colToUse.r, colToUse.g, colToUse.b);
@@ -295,23 +298,23 @@ function getColourToUse() {
 }
 
 function renderLetter(letter) {
-	toRender = letters[letter];
-	colour = getColourToUse();
-		for (rows = 0; rows < 16; rows ++) {
-			rowTotal = 0;
-			for (cols = 0; cols < 16; cols ++ ) {
-				 if ((toRender[rows] & Math.pow(2, cols)) > 0) {
-					 grid.blocks[rows][cols].hit();
-				 }
-			}
-		}
+  toRender = letters[letter];
+  colour = getColourToUse();
+    for (rows = 0; rows < 16; rows ++) {
+      rowTotal = 0;
+      for (cols = 0; cols < 16; cols ++ ) {
+         if ((toRender[rows] & Math.pow(2, cols)) > 0) {
+           grid.blocks[rows][cols].hit();
+         }
+      }
+    }
 }
 
 function autoAdd(num) {
-	for (index = 0; index < num; index ++) {
-		blockNum = rand(grid.blocksSequence.length);
-		grid.blocksSequence[blockNum].hit();
-	}
+  for (index = 0; index < num; index ++) {
+    blockNum = rand(grid.blocksSequence.length);
+    grid.blocksSequence[blockNum].hit();
+  }
 }
 
 
