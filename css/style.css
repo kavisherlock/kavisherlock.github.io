@@ -9,11 +9,10 @@ html {
 
 body {
   height: 100%;
-  background: #eee;
+  background: lavenderblush;
   background-image: url("../resources/dust_scratches.png");
   margin: 0;
   padding: 0;
-  color: #333;
   font-family: 'ABeeZee', 'Helvetica', sans-serif;
   line-height: 1;
 }
@@ -25,7 +24,7 @@ svg {
 /* Generic resets */
 a {
   text-decoration: none;
-  color: #3D7DC2;
+  color: #2D6DA2;
 }
 
 a:hover {
@@ -54,9 +53,10 @@ h1,h2,h3,h4,h5 {
   margin: 0 15% 0 15%;
   padding: 1% 0 5% 0;
   box-shadow: 4px 4px 3px grey;
-  background: #5DADE2;
+  background: linear-gradient(#6DBDF2 20%, rgb(205, 131, 248), rgb(78, 224, 168));
+  color: lavenderblush;
+  text-align: justify;
 }
-
 
 /* Header */
 header {
@@ -91,7 +91,7 @@ ul, ol {
 #main-menu {
   float: right;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 #main-menu li {
@@ -99,7 +99,7 @@ ul, ol {
 }
 
 #main-menu li a {
-  font-family: 'Homemade Apple', sans-serif;
+  font-family: 'Homemade Apple', cursive, sans-serif;
   font-weight: bold;
   font-size: 1.5em;
   display: inline-block;
@@ -129,12 +129,15 @@ ul, ol {
   overflow: hidden;
   margin-top: 50px;
   line-height: 1.5;
+  font-size: 100%;
+  text-align: justify;
+  color: lavenderblush;
 }
 
-#content p {
+#subtext {
   text-align: center;
   margin-top: -20px;
-  color: #bbb;
+  color: lavenderblush;
 }
 
 canvas.full {
@@ -143,28 +146,36 @@ canvas.full {
   left: 0;
 }
 
+.content-inner {
+  font-size: 75%;
+}
+
+h2 {
+  font-family: 'Homemade Apple', sans-serif;
+  font-weight: bold;
+}
+
+.section {
+  padding-top: 50px;
+  border-top: solid lavenderblush 1px;
+}
 
 /* About Me */
 #about {
-  margin-top: 50px;
+  margin-top: 100px;
   line-height: 1.5;
-  font-size: 110%;
 }
-
-#about h2 {
-  font-size: 2em;
-}
-
 
 /* Books */
 #books {
   margin-top: 50px;
   line-height: 1.5;
-  font-size: 110%;
 }
 
-#books h2 {
-  font-size: 2em;
+#books h3 {
+  border-top: solid lavenderblush 0.5px;
+  border-bottom: solid lavenderblush 0.5px;
+  padding: 10px 0;
 }
 
 .book-row {
@@ -216,6 +227,17 @@ canvas.full {
   line-height: 1.5;
 }
 
+.work-cards {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+}
+
+.work-card {
+  width: 50%;
+  border: double lavender 3px;
+  padding: 10px;
+}
 
 /* Footer */
 footer {
