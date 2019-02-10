@@ -77,7 +77,7 @@ ul, ol {
   text-decoration: none;
   display: inline-block;
   margin: 0 10px;
-  padding: 5px;
+  padding: 5px 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -88,13 +88,13 @@ ul, ol {
 }
 
 #main-menu li a.selected {
-  color: rgb(255, 210, 20);
+  color: rgb(220, 208, 255);
   background-color: #3D7DB2;
 }
 
 #main-menu li a:hover {
   cursor: pointer;
-  color: rgb(255, 210, 20);
+  color: rgb(220, 208, 255);
   background-color: #3D7DB2;
 }
 

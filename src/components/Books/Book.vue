@@ -17,13 +17,17 @@ export default {
   props: {
     bookName: String,
     apiKey: String,
+    initIndex: {
+      type: Number,
+      default: 0,
+    },
   },
   mounted() {
     if (this.bookName) {
       axios
         .get(`https://www.googleapis.com/books/v1/volumes?key=${this.apiKey}&q=${encodeURI(this.bookName.trim())}`)
         .then((response) => {
-          let index = 0;
+          let index = this.initIndex;
           while (!response.data.items[index].volumeInfo.imageLinks) {
             index += 1;
           }

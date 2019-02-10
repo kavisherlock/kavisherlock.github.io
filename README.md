@@ -1,4 +1,6 @@
-# new-website
+# Kavisherlock.Github.io
+
+My personal website made using Vue.js
 
 ## Project setup
 ```

@@ -1,5 +1,17 @@
 <template>
   <div class="content">
+    <div class="content-header">2019</div>
+    <div class="content-inner">
+      <Book
+        class="book"
+        v-for="(bookName, index) in bookNames2019"
+        :key="index"
+        :bookName="bookName"
+        :init-index=1
+        :apiKey="apiKey"
+      />
+    </div>
+    <br />
     <div class="content-header">2018</div>
     <div class="content-inner">
       <Book
@@ -27,6 +39,7 @@
 
 <script>
 import Book from './Book.vue';
+import bookList2019 from '../../resources/books/bookList2019.txt';
 import bookList2018 from '../../resources/books/bookList2018.txt';
 import bookList2017 from '../../resources/books/bookList2017.txt';
 
@@ -37,6 +50,7 @@ export default {
   },
   data() {
     return {
+      bookNames2019: [],
       bookNames2018: [],
       bookNames2017: [],
     };
@@ -45,6 +59,7 @@ export default {
     Book,
   },
   mounted() {
+    this.bookNames2019 = bookList2019.split('\n');
     this.bookNames2018 = bookList2018.split('\n');
     this.bookNames2017 = bookList2017.split('\n');
   },

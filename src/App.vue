@@ -18,6 +18,7 @@
 import HomePage from './components/HomePage.vue';
 import Header from './components/Header.vue';
 import Books from './components/Books/Books.vue';
+import Work from './components/Work/WorkList.vue';
 
 export default {
   name: 'app',
@@ -32,12 +33,14 @@ export default {
     Header,
     HomePage,
     Books,
+    Work,
   },
   computed: {
     currentTabComponent() {
       switch (this.currentTab) {
         case 'Home': return HomePage;
         case 'Books': return Books;
+        case 'Work': return Work;
         default: return null;
       }
     },

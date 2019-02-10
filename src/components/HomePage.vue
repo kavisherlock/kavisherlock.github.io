@@ -5,9 +5,9 @@
     </div>
 
     <div class="section" id="about">
-      Kavish is a Software Engineer at Cerner Corporation in Kansas City.
-      He got his Bachelor's Degree in Computer Engineering
-      from University of Illinois at Urbana-Champaign in 2016.
+      I've been a Software Engineer at Cerner Corporation in Kansas City since July 2016.<br>
+      I got Bachelor's Degree in Computer Engineering from
+      University of Illinois at Urbana-Champaign in 2016.
     </div>
   </div>
 </template>
@@ -29,9 +29,11 @@ export default {
   text-align: center;
 }
 .section {
+  width: 80%;
   padding: 10px;
-  margin: 10px;
-  border: solid rgb(255, 196, 20) 1px;
+  margin: 50px 10px;
+  margin-left: 10%;
+  border: solid rgb(220, 208, 255) 1px;
 }
 #about {
   line-height: 1.5;
