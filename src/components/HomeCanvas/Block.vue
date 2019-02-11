@@ -35,7 +35,6 @@ export default {
   created() {
     EventBus.$on('block-hit', (e) => {
       if (e.x === this.x && e.y === this.y) {
-        console.log('ROTATE', this.x, this.y);
         this.rotate = 1;
         this.ink = 200;
       }
@@ -54,7 +53,7 @@ export default {
       const ctx = this.provider.context;
 
       const borderColour = new Colour(this.colour.r, this.colour.g, this.colour.b);
-      borderColour.add(-40);
+      borderColour.add(-60);
 
       ctx.fillStyle = this.colour.toRgba(1);
       ctx.strokeStyle = borderColour.toRgba(0.5);

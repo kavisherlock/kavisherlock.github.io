@@ -19,6 +19,7 @@
 <script>
 import Grid from './Grid.vue';
 import EventBus from '../../event-bus';
+import letters from './letters';
 
 export default {
   name: 'my-canvas',
@@ -36,6 +37,7 @@ export default {
       currY: undefined,
       lastX: undefined,
       lastY: undefined,
+      startMessageIndex: 0,
     };
   },
 
@@ -48,7 +50,17 @@ export default {
   mounted() {
     this.provider.context = this.$refs['my-canvas'].getContext('2d');
     EventBus.$emit('redraw-canvas');
-    setInterval(this.tick, 30);
+    this.interval = setInterval(this.tick, 30);
+
+    this.startTimer = setInterval(this.startMessage, 300);
+  },
+
+  beforeDestroy() {
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
+    window.removeEventListener('keypress', this.handleKeyPress);
   },
 
   methods: {
@@ -82,12 +94,40 @@ export default {
       this.lastY = undefined;
     },
 
+    handleKeyPress(e) {
+      this.renderLetter(String.fromCharCode(e.which));
+    },
+
+    startMessage() {
+      const message = 'welcome';
+      if (message[this.startMessageIndex].match(/[a-z]/i) || message[this.startMessageIndex].match(/[0-9]/i)) {
+        this.renderLetter(message[this.startMessageIndex]);
+      }
+      this.startMessageIndex += 1;
+
+      if (this.startMessageIndex >= message.length) {
+        clearInterval(this.startTimer);
+        window.addEventListener('keypress', this.handleKeyPress);
+      }
+    },
+
     tick() {
       this.provider.context.clearRect(0, 0, 600, 600);
       this.provider.context.save();
       EventBus.$emit('redraw-canvas');
 
       this.provider.context.restore();
+    },
+
+    renderLetter(letter) {
+      const toRender = letters[letter];
+      for (let row = 0; row < 16; row += 1) {
+        for (let col = 0; col < 16; col += 1) {
+          if ((toRender[row] & 2 ** col) > 0) { // eslint-disable-line no-bitwise
+            EventBus.$emit('block-hit', { x: col, y: row });
+          }
+        }
+      }
     },
   },
 };
