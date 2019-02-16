@@ -15,6 +15,13 @@
       />
     </section>
     <section>
+      <h2>Personal Website</h2>
+      <Repo
+        class="repo"
+        :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('kavisherlock.github.io'))[0]"
+      />
+    </section>
+    <section>
       <h2>Playgrounds</h2>
       <Repo
         class="repo"
