@@ -1,44 +1,26 @@
 <template>
   <div class="content">
-    <div class="content-header">2019</div>
-    <div class="content-inner">
-      <Book
-        class="book"
-        v-for="(bookName, index) in bookNames2019"
-        :key="index"
-        :bookName="bookName"
-        :init-index=1
-        :apiKey="apiKey"
-      />
-    </div>
-    <br />
-    <div class="content-header">2018</div>
-    <div class="content-inner">
-      <Book
-        class="book"
-        v-for="(bookName, index) in bookNames2018"
-        :key="index"
-        :bookName="bookName"
-        :apiKey="apiKey"
-      />
-    </div>
-    <br />
-    <div class="content-header">2017</div>
-    <div class="content-inner">
-      <Book
-        class="book"
-        v-for="(bookName, index) in bookNames2017"
-        :key="index"
-        :bookName="bookName"
-        :apiKey="apiKey"
-      />
-    </div>
-    <br />
+    <BookSection
+      :bookSectionTitle=2019
+      :books="bookNames2019"
+      :apiKey="apiKey"
+      :initialShowBooks="true"
+    />
+    <BookSection
+      :bookSectionTitle=2018
+      :books="bookNames2018"
+      :apiKey="apiKey"
+    />
+    <BookSection
+      :bookSectionTitle=2017
+      :books="bookNames2017"
+      :apiKey="apiKey"
+    />
   </div>
 </template>
 
 <script>
-import Book from './Book.vue';
+import BookSection from './BookSection.vue';
 import bookList2019 from '../../resources/books/bookList2019.txt';
 import bookList2018 from '../../resources/books/bookList2018.txt';
 import bookList2017 from '../../resources/books/bookList2017.txt';
@@ -56,7 +38,7 @@ export default {
     };
   },
   components: {
-    Book,
+    BookSection,
   },
   mounted() {
     this.bookNames2019 = bookList2019.split('\n');

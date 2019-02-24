@@ -61,7 +61,6 @@ export default {
     axios
       .get('https://api.github.com/users/kavisherlock/repos?sort=pushed')
       .then((response) => {
-        console.log('1', response.data);
         this.myRepos =
           response.data
             .filter(repo => !repo.fork && !repo.archived);

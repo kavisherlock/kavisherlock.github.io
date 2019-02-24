@@ -54,18 +54,18 @@ export default {
 </script>
 
 <style>
-#app {
-  min-height: 100vh;
-  font-family: 'ABeeZee', 'Helvetica', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  background: rgb(89, 177, 250);
-  margin: 0 15%;
-  padding: 0 2% 2% 2%;
-}
+  #app {
+    min-height: 100vh;
+    font-family: 'ABeeZee', 'Helvetica', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    background: linear-gradient(rgb(89, 177, 250) 70%, rgb(164, 114, 245), rgb(224, 78, 163));
+    margin: 0 15%;
+    padding: 0 2% 2% 2%;
+  }
 
-#header {
-  margin-bottom: 50px;
-}
+  #header {
+    margin-bottom: 50px;
+  }
 </style>

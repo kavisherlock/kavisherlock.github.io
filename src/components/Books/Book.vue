@@ -1,7 +1,9 @@
 <template>
-  <div class="book">
-    <img :src='this.imageThumbnail' />
-  </div>
+  <transition enter-active-class="bouncein">
+    <div class="book" v-if="this.imageThumbnail">
+      <img :src='this.imageThumbnail' />
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -12,6 +14,7 @@ export default {
   data() {
     return {
       imageThumbnail: '',
+      bookTitle: '',
     };
   },
   props: {
@@ -31,6 +34,7 @@ export default {
           while (!response.data.items[index].volumeInfo.imageLinks) {
             index += 1;
           }
+          this.bookTitle = response.data.items[index].volumeInfo.title;
           this.imageThumbnail = response.data.items[index].volumeInfo.imageLinks.thumbnail;
         });
     }
@@ -40,11 +44,33 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.book {
-  text-align: center;
-  color: white;
-  width: auto;
-  height: auto;
-  max-width: 200px;
-}
+  .book {
+    text-align: center;
+    width: auto;
+    height: auto;
+    max-width: 200px;
+  }
+
+  .bouncein {
+    animation: bouncein 0.8s linear both;
+  }
+
+  @keyframes bouncein {
+    0%{
+      opacity: 0;
+      transform: scale(0) rotate(0deg);
+    }
+    50%{
+      opacity: 0.9;
+      transform: scale(0.8) rotate(540deg);
+    }
+    75%{
+      opacity: 1;
+      transform: scale(1.4) rotate(720deg);
+    }
+    100%{
+      opacity: 1;
+      transform: scale(1) rotate(720deg);
+    }
+  }
 </style>
