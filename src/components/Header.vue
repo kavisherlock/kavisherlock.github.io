@@ -8,12 +8,12 @@
         v-for="tab in tabs"
         :key="tabs.indexOf(tab)"
       >
-        <a
-          v-bind:class="{ selected: currentTab === tab }"
-          @click="$emit('switchTabs', tab)"
+        <router-link
+          v-bind:class="{ selected: $route.name === tab }"
+          :to="tab === 'Home' ? '/' : `/${tab.toLowerCase()}`"
         >
           {{ tab }}
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -24,30 +24,34 @@ export default {
   name: 'Header',
   props: {
     tabs: Array,
-    currentTab: String,
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
+.header {
+  padding-bottom: 50px;
+}
+
+#title {
   font-family: 'Homemade Apple';
   font-size: 2.5em;
   margin: 0;
   padding: 20px;
 }
 
-h1 a {
+#title a {
   text-decoration: none;
   color: #E6E6FA;
   text-shadow:  4px 4px 3px rgb(55, 30, 78);
   transition: color 0.5s ease-in-out;
   -moz-transition: color 0.5s ease-in-out;
   -webkit-transition: color 0.5s ease-in-out;
+  position: absolute;
 }
 
-h1 a:hover {
+#title a:hover {
   cursor: pointer;
   text-decoration: none;
   text-shadow:  4px 4px 3px #555;
@@ -63,7 +67,6 @@ ul, ol {
 #main-menu {
   float: right;
   overflow: hidden;
-  margin: -50px 50px 50px 0;
 }
 
 #main-menu li {
@@ -78,6 +81,7 @@ ul, ol {
   display: inline-block;
   margin: 0 10px;
   padding: 5px 10px;
+  height: 40px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;

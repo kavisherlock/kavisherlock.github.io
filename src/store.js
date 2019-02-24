@@ -5,7 +5,7 @@ import Colour from './components/HomeCanvas/Colour';
 
 Vue.use(Vuex);
 
-const store = new Vuex.Store({
+export default new Vuex.Store({
   state: {
     grid: Array(16).fill().map((_, y) => Array(16).fill().map((_2, x) => ({
       x,
@@ -18,6 +18,15 @@ const store = new Vuex.Store({
     targetColour: new Colour(147, 112, 219),
   },
   mutations: {
+    resetGrid(state) {
+      state.grid = Array(16).fill().map((_, y) => Array(16).fill().map((_2, x) => ({
+        x,
+        y,
+        rotation: 0,
+        ink: 0,
+        colour: new Colour(140, 200, 242),
+      })));
+    },
     updateRotation(state, data) {
       const { x, y, rotation } = data;
       state.grid[y][x].rotation = rotation;
@@ -48,5 +57,3 @@ const store = new Vuex.Store({
     grid: state => state.grid,
   },
 });
-
-export default store;

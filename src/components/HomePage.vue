@@ -5,9 +5,14 @@
     </div>
 
     <div class="section" id="about">
-      I've been a Software Engineer at Cerner Corporation in Kansas City since July 2016.<br>
-      I got Bachelor's Degree in Computer Engineering from
-      University of Illinois at Urbana-Champaign in 2016.
+      <p>I am a Software Engineer at Cerner Corporation in Kansas City. Been here since July 2016</p>
+      <p>I got my Bachelor's Degree in Computer Engineering with a minor in Astronomy from
+      University of Illinois at Urbana-Champaign in May 2016 with High Honors.</p>
+      <p>This is my third year doing the 52 books in 52 weeks challenge.</p>
+      <p>I also blog about the books I read at
+        <a href="https://kavishrm.wordpress.com" target="_blank">kavishrm.wordpress.com</a>.
+      </p>
+      <p>I ran my first half-marathon on October 20 2018. It is still my biggest achievement.</p>
     </div>
   </div>
 </template>
@@ -36,6 +41,13 @@ export default {
   border: solid rgb(220, 208, 255) 1px;
 }
 #about {
-  line-height: 1.5;
+  line-height: 1.2;
+  color: lavenderblush;
+}
+#about a {
+  color: lavender;
+}
+#about a:hover {
+  color: lavenderblush;
 }
 </style>

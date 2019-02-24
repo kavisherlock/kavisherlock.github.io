@@ -1,16 +1,21 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    v-bind:class="{
+      blueMajority: $route.name === tabs[0],
+      purpleMajority: $route.name === tabs[1],
+      pinkMajority: $route.name === tabs[2],
+    }"
+  >
     <Header
       id="header"
-      :currentTab="currentTab"
       :tabs="tabs"
-      @switchTabs="switchTabs"
     />
-    <component
-      v-bind:is="currentTabComponent"
-      class="tab"
-      :apiKey="this.apiKey"
-    />
+    <transition name="fade" mode="out-in">
+      <router-view
+        :apiKey="this.apiKey"
+      />
+    </transition>
   </div>
 </template>
 
@@ -24,7 +29,6 @@ export default {
   name: 'app',
   data() {
     return {
-      currentTab: 'Home',
       tabs: ['Home', 'Books', 'Work'],
       apiKey: 'AIzaSyBj6pwMyPi8NVKBybSPJ3WWwGfx3__Nr4I',
     };
@@ -35,34 +39,41 @@ export default {
     Books,
     Work,
   },
-  computed: {
-    currentTabComponent() {
-      switch (this.currentTab) {
-        case 'Home': return HomePage;
-        case 'Books': return Books;
-        case 'Work': return Work;
-        default: return null;
-      }
-    },
-  },
-  methods: {
-    switchTabs(tab) {
-      this.currentTab = tab;
-    },
-  },
 };
 </script>
 
 <style>
   #app {
     min-height: 100vh;
+    min-width: 500px;
     font-family: 'ABeeZee', 'Helvetica', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    background: linear-gradient(rgb(89, 177, 250) 70%, rgb(164, 114, 245), rgb(224, 78, 163));
     margin: 0 15%;
     padding: 0 2% 2% 2%;
+  }
+
+  .blueMajority {
+    background: linear-gradient(rgb(89, 177, 250) 60%, rgb(164, 114, 245), rgb(224, 78, 163));
+  }
+
+  .purpleMajority {
+    background: linear-gradient(rgb(89, 177, 250), rgb(164, 114, 245) 50%, rgb(224, 78, 163) 100%);
+  }
+
+  .pinkMajority {
+    background: linear-gradient(rgb(89, 177, 250), rgb(164, 114, 245), rgb(224, 78, 163) 70%);
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: 0.3s opacity ease-in-out;
+  }
+
+  .fade-enter,
+  .fade-leave-active {
+    opacity: 0
   }
 
   #header {

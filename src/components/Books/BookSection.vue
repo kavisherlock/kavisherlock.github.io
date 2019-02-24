@@ -70,7 +70,7 @@ export default {
   }
 
   .rollout {
-    animation: rollout 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: rollout 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
 
   @keyframes rollout {

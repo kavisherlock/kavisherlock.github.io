@@ -48,6 +48,7 @@ export default {
 
   mounted() {
     this.provider.context = this.$refs['my-canvas'].getContext('2d');
+    this.$store.commit('resetGrid');
     this.redrawCanvas();
     this.interval = setInterval(this.tick, 30);
     this.startTimer = setInterval(this.startMessage, 300);
@@ -58,6 +59,7 @@ export default {
       clearInterval(this.interval);
       this.interval = null;
     }
+    this.$store.commit('resetGrid');
     window.removeEventListener('keypress', this.handleKeyPress);
   },
 
