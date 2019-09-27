@@ -4,14 +4,14 @@
       <h2>Text Recognition App</h2>
       <Repo
         class="repo"
-        :repo="{ name: 'Under Construction' }"
+        :repo="{ name: 'Under Construction', description: 'Will eventually get to it' }"
       />
     </section>
     <section>
       <h2>SmartChess</h2>
       <Repo
         class="repo"
-        :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('smartchess'))[0]"
+        :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('smart-chess'))[0]"
       />
     </section>
     <section>
