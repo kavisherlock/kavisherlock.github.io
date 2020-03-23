@@ -3,8 +3,8 @@
     id="app"
     v-bind:class="{
       blueMajority: $route.name === tabs[0],
-      purpleMajority: $route.name === tabs[1],
-      pinkMajority: $route.name === tabs[2],
+      purpleMajority: $route.name === tabs[2],
+      pinkMajority: $route.name === tabs[1],
     }"
   >
     <Header
@@ -50,7 +50,6 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    margin: 0 15%;
     padding: 0 2% 2% 2%;
   }
 
@@ -63,7 +62,7 @@ export default {
   }
 
   .pinkMajority {
-    background: linear-gradient(rgb(89, 177, 250), rgb(164, 114, 245), rgb(224, 78, 163) 70%);
+    background: linear-gradient(rgb(89, 177, 250), rgb(164, 114, 245), rgb(224, 78, 163) 90%);
   }
 
   .fade-enter-active,

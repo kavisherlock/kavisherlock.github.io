@@ -4,7 +4,7 @@
   >
     <div class="repo" v-if="Object.keys(this.repo).length > 0">
       <div id="reponame">
-        <strong>
+        <strong v-if="this.repo.name.length > 0">
           <a :href='this.repo.clone_url' target="_blank">{{this.repo.name}}</a>
         </strong>
       </div>
