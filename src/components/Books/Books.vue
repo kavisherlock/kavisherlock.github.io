@@ -1,18 +1,23 @@
 <template>
   <div class="content">
     <BookSection
-      :bookSectionTitle=2019
-      :books="bookNames2019"
+      :bookSectionTitle="2020"
+      :books="bookNames2020"
       :apiKey="apiKey"
       :initialShowBooks="true"
     />
     <BookSection
-      :bookSectionTitle=2018
+      :bookSectionTitle="2019"
+      :books="bookNames2019"
+      :apiKey="apiKey"
+    />
+    <BookSection
+      :bookSectionTitle="2018"
       :books="bookNames2018"
       :apiKey="apiKey"
     />
     <BookSection
-      :bookSectionTitle=2017
+      :bookSectionTitle="2017"
       :books="bookNames2017"
       :apiKey="apiKey"
     />
@@ -21,6 +26,7 @@
 
 <script>
 import BookSection from './BookSection.vue';
+import bookList2020 from '../../resources/books/bookList2020.txt';
 import bookList2019 from '../../resources/books/bookList2019.txt';
 import bookList2018 from '../../resources/books/bookList2018.txt';
 import bookList2017 from '../../resources/books/bookList2017.txt';
@@ -32,6 +38,7 @@ export default {
   },
   data() {
     return {
+      bookNames2020: [],
       bookNames2019: [],
       bookNames2018: [],
       bookNames2017: [],
@@ -41,6 +48,7 @@ export default {
     BookSection,
   },
   mounted() {
+    this.bookNames2020 = bookList2020.split('\n');
     this.bookNames2019 = bookList2019.split('\n');
     this.bookNames2018 = bookList2018.split('\n');
     this.bookNames2017 = bookList2017.split('\n');

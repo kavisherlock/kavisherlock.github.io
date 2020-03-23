@@ -58,19 +58,19 @@ export default {
   @keyframes bouncein {
     0%{
       opacity: 0;
-      transform: scale(0) rotate(0deg);
+      transform: scale(0);
     }
     50%{
       opacity: 0.9;
-      transform: scale(0.8) rotate(540deg);
+      transform: scale(0.9);
     }
     75%{
       opacity: 1;
-      transform: scale(1.4) rotate(720deg);
+      transform: scale(1.1);
     }
     100%{
       opacity: 1;
-      transform: scale(1) rotate(720deg);
+      transform: scale(1);
     }
   }
 </style>

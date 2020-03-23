@@ -1,6 +1,6 @@
 <template>
   <div class="worklist">
-    <section>
+    <!-- <section>
       <h2>Text Recognition App</h2>
       <Repo
         class="repo"
@@ -13,7 +13,7 @@
         class="repo"
         :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('smart-chess'))[0]"
       />
-    </section>
+    </section> -->
     <section>
       <h2>Personal Website</h2>
       <Repo
