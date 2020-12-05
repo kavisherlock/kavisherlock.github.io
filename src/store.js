@@ -7,24 +7,29 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    // Home Canvas Grid
     grid: Array(16).fill().map((_, y) => Array(16).fill().map((_2, x) => ({
       x,
       y,
       rotation: 0,
       ink: 0,
-      colour: new Colour(140, 200, 242),
+      colour: new Colour(40, 60, 82),
     }))),
-    colourToUse: new Colour(140, 200, 242),
+    colourToUse: new Colour(40, 60, 82),
     targetColour: new Colour(147, 112, 219),
+
+    // Books
+    bookMap: {},
   },
   mutations: {
+    // Home Canvas Grid
     resetGrid(state) {
       state.grid = Array(16).fill().map((_, y) => Array(16).fill().map((_2, x) => ({
         x,
         y,
         rotation: 0,
         ink: 0,
-        colour: new Colour(140, 200, 242),
+        colour: new Colour(40, 60, 82),
       })));
     },
     updateRotation(state, data) {
@@ -52,8 +57,15 @@ export default new Vuex.Store({
       const { x, y, targetColour } = data;
       state.grid[y][x].colour.stepTowardsColour(targetColour);
     },
+
+    // Books
+    addToBookMap(state, data) {
+      const { bookName, title, imageLink } = data;
+      state.bookMap[bookName] = { title, imageLink };
+    },
   },
   getters: {
     grid: state => state.grid,
+    bookMap: state => state.bookMap,
   },
 });

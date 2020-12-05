@@ -44,12 +44,12 @@ export default {
     color: lavenderblush;
   }
 
-  /* .bouncein {
-    animation: bouncein 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  .bouncein {
+    animation: bouncein 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   @keyframes bouncein {
-    0% { opacity: 0; transform: translateY(-50px); }
-    100% { opacity: 1; transform: translateY(0); }
-  } */
+    0% { opacity: 0; height: 0; }
+    100% { opacity: 1; height: 50px; }
+  }
 </style>

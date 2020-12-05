@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HomePage from './components/HomePage.vue';
-import Books from './components/Books/Books.vue';
-import Work from './components/Work/WorkList.vue';
+import Home from './pages/Home.vue';
+import Books from './pages/Books.vue';
+import Work from './pages/Work.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', name: 'Home', component: HomePage },
+  { path: '/', name: 'Home', component: Home },
   { path: '/books', name: 'Books', component: Books },
   { path: '/work', name: 'Work', component: Work },
 ];

@@ -1,23 +1,23 @@
 <template>
   <div class="content">
     <BookSection
-      :bookSectionTitle="2020"
+      :bookSectionTitle="'2020'"
       :books="bookNames2020"
       :apiKey="apiKey"
       :initialShowBooks="true"
     />
     <BookSection
-      :bookSectionTitle="2019"
+      :bookSectionTitle="'2019'"
       :books="bookNames2019"
       :apiKey="apiKey"
     />
     <BookSection
-      :bookSectionTitle="2018"
+      :bookSectionTitle="'2018'"
       :books="bookNames2018"
       :apiKey="apiKey"
     />
     <BookSection
-      :bookSectionTitle="2017"
+      :bookSectionTitle="'2017'"
       :books="bookNames2017"
       :apiKey="apiKey"
     />
@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import BookSection from './BookSection.vue';
-import bookList2020 from '../../resources/books/bookList2020.txt';
-import bookList2019 from '../../resources/books/bookList2019.txt';
-import bookList2018 from '../../resources/books/bookList2018.txt';
-import bookList2017 from '../../resources/books/bookList2017.txt';
+import BookSection from '../components/Books/BookSection.vue';
+import bookList2020 from '../resources/books/bookList2020.txt';
+import bookList2019 from '../resources/books/bookList2019.txt';
+import bookList2018 from '../resources/books/bookList2018.txt';
+import bookList2017 from '../resources/books/bookList2017.txt';
 
 export default {
   name: 'Books',

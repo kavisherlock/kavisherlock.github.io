@@ -2,8 +2,8 @@
   <div
     id="app"
     v-bind:class="{
-      blueMajority: $route.name === tabs[0],
-      purpleMajority: $route.name === tabs[2],
+      blueMajority: $route.name === 'Home',
+      purpleMajority: $route.name === tabs[0],
       pinkMajority: $route.name === tabs[1],
     }"
   >
@@ -20,24 +20,19 @@
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue';
+
 import Header from './components/Header.vue';
-import Books from './components/Books/Books.vue';
-import Work from './components/Work/WorkList.vue';
 
 export default {
   name: 'app',
   data() {
     return {
-      tabs: ['Home', 'Books', 'Work'],
+      tabs: ['Books', 'Work'],
       apiKey: 'AIzaSyBj6pwMyPi8NVKBybSPJ3WWwGfx3__Nr4I',
     };
   },
   components: {
     Header,
-    HomePage,
-    Books,
-    Work,
   },
 };
 </script>
@@ -49,20 +44,20 @@ export default {
     font-family: 'ABeeZee', 'Helvetica', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
+    color: #aed2f7;
     padding: 0 2% 2% 2%;
   }
 
   .blueMajority {
-    background: linear-gradient(rgb(89, 177, 250) 60%, rgb(164, 114, 245), rgb(224, 78, 163));
+    background: linear-gradient(rgb(19, 37, 53) 60%, rgb(25, 16, 39), rgb(54, 22, 41));
   }
 
   .purpleMajority {
-    background: linear-gradient(rgb(89, 177, 250), rgb(164, 114, 245) 50%, rgb(224, 78, 163) 100%);
+    background: linear-gradient(rgb(19, 37, 53), rgb(25, 16, 39) 50%, rgb(54, 22, 41) 100%);
   }
 
   .pinkMajority {
-    background: linear-gradient(rgb(89, 177, 250), rgb(164, 114, 245), rgb(224, 78, 163) 90%);
+    background: linear-gradient(rgb(19, 37, 53), rgb(25, 16, 39), rgb(54, 22, 41) 90%);
   }
 
   .fade-enter-active,
@@ -76,6 +71,6 @@ export default {
   }
 
   #header {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 </style>

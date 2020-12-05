@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <h1 id="title">
-      <a @click="$emit('switchTabs', tabs[0])">Kavish</a>
+      <router-link :to="'/'">
+        Kavish
+      </router-link>
     </h1>
     <ul id="main-menu">
       <li
@@ -10,7 +12,7 @@
       >
         <router-link
           v-bind:class="{ selected: $route.name === tab }"
-          :to="tab === 'Home' ? '/' : `/${tab.toLowerCase()}`"
+          :to="`/${tab.toLowerCase()}`"
         >
           {{ tab }}
         </router-link>
@@ -31,13 +33,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .header {
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 #title {
   font-family: 'Homemade Apple';
   font-size: 2.5em;
   margin: 0;
+  display: inline;
   padding: 20px;
 }
 
@@ -49,12 +52,13 @@ export default {
   -moz-transition: color 0.5s ease-in-out;
   -webkit-transition: color 0.5s ease-in-out;
   position: absolute;
+  margin-top: 20px;
 }
 
 #title a:hover {
   cursor: pointer;
   text-decoration: none;
-  text-shadow:  4px 4px 3px #555;
+  text-shadow:  1px 2px 1px #555;
 }
 
 ul, ol {
@@ -65,6 +69,7 @@ ul, ol {
 }
 
 #main-menu {
+  margin-top: 30px;
   float: right;
   overflow: hidden;
 }
@@ -80,12 +85,12 @@ ul, ol {
   text-decoration: none;
   display: inline-block;
   margin: 0 10px;
-  padding: 5px 10px;
+  padding: 5px 15px;
   height: 40px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  color: rgb(61, 61, 155);
+  color: #E6E6FA;
   transition: color 0.25s ease-in-out, background-color 0.5s ease-in-out;
   -moz-transition: color 0.25s ease-in-out, background-color 0.5s ease-in-out;
   -webkit-transition: color 0.25s ease-in-out, background-color 0.5s ease-in-out;
@@ -93,13 +98,13 @@ ul, ol {
 
 #main-menu li a.selected {
   color: rgb(220, 208, 255);
-  background-color: #3D7DB2;
+  background-color: #172e42;
 }
 
 #main-menu li a:hover {
   cursor: pointer;
   color: rgb(220, 208, 255);
-  background-color: #3D7DB2;
+  background-color: #19364e;
 }
 
 </style>
