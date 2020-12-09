@@ -49,6 +49,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .content-inner {
+    padding: 0 5%;
+  }
+
   .content-header {
     color: lavender;
     background-color: rgb(81, 25, 128);
@@ -68,7 +72,8 @@ export default {
 
   .book {
     display: inline-block;
-    margin: 5px;
+    width: 130px;
+    margin: 1.5%;
   }
 
   .rollin {

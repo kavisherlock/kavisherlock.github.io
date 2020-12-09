@@ -1,23 +1,25 @@
 <template>
   <div class="content">
+    <h2 class="subtext">Yearly Target: 52 Books</h2>
+    <p class="subtext">Blog: <a href="https://kavishandbooks.wordpress.com/" target="_blank">Kavish and Books</a></p>
     <BookSection
-      :bookSectionTitle="'2020'"
+      :bookSectionTitle="'2020 (50/52)'"
       :books="bookNames2020"
       :apiKey="apiKey"
       :initialShowBooks="true"
     />
     <BookSection
-      :bookSectionTitle="'2019'"
+      :bookSectionTitle="'2019 (46/52)'"
       :books="bookNames2019"
       :apiKey="apiKey"
     />
     <BookSection
-      :bookSectionTitle="'2018'"
+      :bookSectionTitle="'2018 (57/52)'"
       :books="bookNames2018"
       :apiKey="apiKey"
     />
     <BookSection
-      :bookSectionTitle="'2017'"
+      :bookSectionTitle="'2017 (55/52)'"
       :books="bookNames2017"
       :apiKey="apiKey"
     />
@@ -63,19 +65,10 @@ export default {
   background-color: lavender;
   width: 100%;
   padding-top: 10px;
+  min-width: 100px;
 }
 
-.content-header {
-  color: white;
-  background-color: purple;
-  font-weight: bold;
-  font-size: 150%;
-  padding: 5px 0;
-  margin: 10px 20px;
-}
-
-.book {
-  display: inline-block;
-  margin: 5px;
+.subtext, .subtext a {
+  color: rgb(19, 37, 53);
 }
 </style>

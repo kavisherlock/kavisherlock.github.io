@@ -28,16 +28,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .repo {
-    color: white;
+    color: #c5ddf5;
     padding: 0 15px 20px 15px;
+    font-size: 18px;
+    line-height: 1.2em;
   }
 
   #reponame {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    line-height: 2em;
   }
 
   .repo a {
+    text-decoration: none;
     color: lavender;
+    border-bottom: 1px solid white
   }
 
   .repo a:hover {

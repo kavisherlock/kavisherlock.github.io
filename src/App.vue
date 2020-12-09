@@ -41,7 +41,7 @@ export default {
   #app {
     min-height: 100vh;
     min-width: 500px;
-    font-family: 'ABeeZee', 'Helvetica', sans-serif;
+    font-family: 'Cairo', 'Helvetica', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #aed2f7;
