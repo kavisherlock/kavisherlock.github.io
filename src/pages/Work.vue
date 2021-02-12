@@ -1,10 +1,17 @@
 <template>
   <div class="worklist">
-    <h3>Senior Software Engineer for Cerner Corporation</h3>
-    <h3>B.S in Computer Engineering with a minor in Astronomy from University of Illinois at Urbana-Champaign</h3>
-    <hr />
-    <h2>Projects</h2>
-    <p class="github">All available at <a  href="https://github.com/kavisherlock" taget="_blank">https://github.com/kavisherlock</a></p>
+    <p class="github">
+      All available at <a href="https://github.com/kavisherlock" taget="_blank">https://github.com/kavisherlock</a>
+    </p>
+    <br />
+    <section>
+      <h3>Personal Website (You are here)</h3>
+      <Repo
+        class="repo"
+        :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('kavisherlock.github.io'))[0]"
+      />
+    </section>
+    <br /><hr /><br />
     <section>
       <h3>Chess and AI</h3>
       <Repo
@@ -13,16 +20,10 @@
       />
       <Repo
         class="repo"
-        :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('chessplayground'))[0]"
+        :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('chessengine'))[0]"
       />
     </section>
-    <section>
-      <h3>Personal Website (You are here)</h3>
-      <Repo
-        class="repo"
-        :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('kavisherlock.github.io'))[0]"
-      />
-    </section>
+    <br /><hr /><br />
     <section>
       <h3>College Projects</h3>
       <Repo
@@ -36,6 +37,7 @@
         :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('prediction'))[0]"
       />
     </section>
+    <br /><hr /><br />
     <section>
       <h3>Playgrounds</h3>
       <p>Playgrounds are my way to learn various concepts or technologies by applying them
@@ -47,6 +49,7 @@
         :repo="repo"
       />
     </section>
+    <br /><hr /><br />
     <section>
       <h3>Clones</h3>
       <p>Clones are my way to learn different development frameworks with a specific app to build</p>
@@ -90,13 +93,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  section div {
-    font-size: 120%;
+  .worklist {
+    margin-bottom: 50px;
   }
 
-  section p {
-    color: white;
+  p {
     padding-bottom: 20px;
+    margin-top: -15px;
+    margin-left: 15px;
+    color: white;
   }
 
   .description {
@@ -119,8 +124,8 @@ export default {
   }
 
   .github {
-    line-height: 10px;
-    margin-top: -15px;
+    float: right;
+    margin-right: 10px;
   }
 
   .github a {

@@ -13,10 +13,10 @@ export default new Vuex.Store({
       y,
       rotation: 0,
       ink: 0,
-      colour: new Colour(40, 60, 82),
+      colour: new Colour(40, 90, 242),
     }))),
-    colourToUse: new Colour(40, 60, 82),
-    targetColour: new Colour(147, 112, 219),
+    colourToUse: new Colour(40, 90, 242),
+    targetColour: new Colour(255, 0, 0),
 
     // Books
     bookMap: {},
@@ -29,7 +29,7 @@ export default new Vuex.Store({
         y,
         rotation: 0,
         ink: 0,
-        colour: new Colour(40, 60, 82),
+        colour: new Colour(80, 20, 42),
       })));
     },
     updateRotation(state, data) {

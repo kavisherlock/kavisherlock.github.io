@@ -14,7 +14,7 @@
           v-bind:class="{ selected: $route.name === tab }"
           :to="`/${tab.toLowerCase()}`"
         >
-          {{ tab }}
+          <Button :text="tab" />
         </router-link>
       </li>
     </ul>
@@ -22,10 +22,15 @@
 </template>
 
 <script>
+import Button from './Button.vue';
+
 export default {
   name: 'Header',
   props: {
     tabs: Array,
+  },
+  components: {
+    Button,
   },
 };
 </script>
@@ -46,7 +51,7 @@ export default {
 
 #title a {
   text-decoration: none;
-  color: #E6E6FA;
+  color: lavenderblush;
   text-shadow:  4px 4px 3px rgb(55, 30, 78);
   transition: color 0.5s ease-in-out;
   -moz-transition: color 0.5s ease-in-out;
@@ -84,13 +89,12 @@ ul, ol {
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
-  margin: 0 10px;
-  padding: 5px 15px;
+  padding: 5px 0;
   height: 40px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  color: #E6E6FA;
+  color: lavenderblush;
   transition: color 0.25s ease-in-out, background-color 0.5s ease-in-out;
   -moz-transition: color 0.25s ease-in-out, background-color 0.5s ease-in-out;
   -webkit-transition: color 0.25s ease-in-out, background-color 0.5s ease-in-out;
@@ -98,13 +102,10 @@ ul, ol {
 
 #main-menu li a.selected {
   color: rgb(220, 208, 255);
-  background-color: #172e42;
 }
 
 #main-menu li a:hover {
   cursor: pointer;
-  color: rgb(220, 208, 255);
-  background-color: #19364e;
 }
 
 </style>

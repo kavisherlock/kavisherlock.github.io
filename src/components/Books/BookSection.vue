@@ -1,11 +1,12 @@
 <template>
-  <div class="content">
-    <div class="content-header"
+  <div class="book-section">
+    <div class="book-section-header"
       v-on:click="showBooks = !showBooks"
     >
-      {{bookSectionTitle}}
+      <div>{{year}}</div>
+      <div>{{bookCount}}</div>
     </div>
-    <div class="content-inner">
+    <div class="book-section-inner">
       <transition enter-active-class="rollin" leave-active-class="rollout">
         <div v-if=showBooks class="books">
           <Book
@@ -28,7 +29,8 @@ import Book from './Book.vue';
 export default {
   name: 'BookSection',
   props: {
-    bookSectionTitle: String,
+    bookCount: String,
+    year: String,
     books: Array,
     initialShowBooks: {
       type: Boolean,
@@ -49,25 +51,28 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .content-inner {
+  .book-section-inner {
     padding: 0 5%;
   }
 
-  .content-header {
-    color: lavender;
-    background-color: rgb(81, 25, 128);
+  .book-section-header {
+    color: rgb(208, 244, 255);
     font-weight: bold;
     font-size: 150%;
-    padding: 5px 0;
+    padding: 5px 25px;
     margin: 10px 0px;
     transition: background 0.5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    background-color: #013A6B;
+    background-image: -webkit-linear-gradient(45deg, #013A6B 50%, #004E95 50%);
   }
 
-  .content-header:hover {
-    color: lavender;
-    background-color: rgb(126, 36, 201);
+  .book-section-header:hover {
     cursor: pointer;
     transition: background 0.5s ease-in-out;
+    background-color: #013A6B;
+    background-image: -webkit-linear-gradient(45deg, #00417a 50%, #0155a3 50%);
   }
 
   .book {

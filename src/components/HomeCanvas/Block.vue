@@ -73,8 +73,8 @@ export default {
         this.$store.commit('updateInk', { x: this.x, y: this.y, ink: this.ink - 1 });
       }
 
-      if (this.ink < 10 && !this.colour.equals(new Colour(140, 200, 242))) {
-        this.$store.commit('stepTowardsColour', { x: this.x, y: this.y, targetColour: new Colour(140, 200, 242) });
+      if (this.ink < 10 && !this.colour.equals(new Colour(255, 240, 245))) {
+        this.$store.commit('stepTowardsColour', { x: this.x, y: this.y, targetColour: new Colour(255, 240, 245) });
       }
     },
 
@@ -107,7 +107,7 @@ export default {
       }
 
       if (this.rotation > 0) {
-        this.$store.commit('updateRotation', { x: this.x, y: this.y, rotation: this.rotation + 10 });
+        this.$store.commit('updateRotation', { x: this.x, y: this.y, rotation: this.rotation + 30 });
       }
       if (this.rotation > 90) {
         this.$store.commit('updateRotation', { x: this.x, y: this.y, rotation: 0 });

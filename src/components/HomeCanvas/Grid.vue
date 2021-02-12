@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-for="r in 16" v-bind:key=r>
-      <div v-for="c in 16" v-bind:key=c>
-        <Block :x=r-1 :y=c-1 />
+    <div v-for="c in 16" v-bind:key=c>
+      <div v-for="r in 16" v-bind:key=r>
+        <Block :x=c-1 :y=r-1 />
       </div>
     </div>
   </div>

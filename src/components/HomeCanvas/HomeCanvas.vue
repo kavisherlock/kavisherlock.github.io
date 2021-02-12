@@ -11,7 +11,9 @@
     >
       <Grid />
     </canvas>
-    <p id="subtext">Try moving your mouse over it, clicking, or typing</p>
+    <div id="subtext">
+      <p>Try moving your mouse over it, clicking, or typing</p>
+    </div>
   </div>
 </template>
 
@@ -37,6 +39,7 @@ export default {
       lastX: undefined,
       lastY: undefined,
       startMessageIndex: 0,
+      lineIndex: -4,
     };
   },
 
@@ -51,7 +54,7 @@ export default {
     this.$store.commit('resetGrid');
     this.redrawCanvas();
     this.interval = setInterval(this.tick, 30);
-    this.startTimer = setInterval(this.startMessage, 300);
+    this.startTimer = setInterval(this.startMessage, 500);
   },
 
   beforeDestroy() {
@@ -100,15 +103,27 @@ export default {
     },
 
     startMessage() {
-      const message = 'welcome';
+      const message = ['code', 'build'];
       if (message[this.startMessageIndex].match(/[a-z]/i) || message[this.startMessageIndex].match(/[0-9]/i)) {
         this.renderLetter(message[this.startMessageIndex]);
       }
       this.startMessageIndex += 1;
+      console.log(this.startMessageIndex);
 
       if (this.startMessageIndex >= message.length) {
         clearInterval(this.startTimer);
+        this.lineTimer = setInterval(this.line, 100);
         window.addEventListener('keypress', this.handleKeyPress);
+      }
+    },
+
+    line() {
+      if (this.lineIndex >= 0) {
+        this.hitBlock(this.lineIndex, 8);
+      }
+      this.lineIndex += 1;
+      if (this.startMessageIndex >= 15) {
+        clearInterval(this.lineTimer);
       }
     },
 

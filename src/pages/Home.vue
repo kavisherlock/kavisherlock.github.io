@@ -2,6 +2,16 @@
   <div class="content">
     <div class="content-inner">
       <HomeCanvas />
+      <div class="about-container">
+        <div class="about">
+          <h1>About Me</h1>
+          <h2>Drinking Coffee since 2015</h2>
+          <h2>Software Engineer since 2016</h2>
+          <h2>Reading since 2017</h2>
+          <h2>Blogging since 2018</h2>
+          <h2>Gaming since 2019</h2>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -21,5 +31,133 @@ export default {
 <style scoped>
 .content {
   text-align: center;
+  margin-bottom: 100px;
+}
+
+.content-inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: -50px;
+  margin-top: 50px;
+}
+
+.about-container {
+  margin-top: 30px;
+  padding-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about {
+  border-radius: 50%;
+  background: #132535;
+  height: 450px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about h1 {
+  color: lavenderblush;
+  padding: 0px 20px;
+  margin-top: -20px;
+  margin-left: -250px;
+  width: 150px;
+  background: rgb(255, 119, 142);
+}
+
+.about h2 {
+  background: rgb(255, 240, 245);
+  padding: 0 20px;
+  margin-top: 0px;
+  margin-left: 250px;
+  width: 350px;
+  color: rgb(255, 119, 142);
+}
+
+.about h2:nth-child(3), .about h2:nth-child(5) {
+  margin-left: 350px;
+}
+
+@media screen and (max-width: 1200px) {
+  .about-container {
+    padding-left: 5%;
+  }
+
+  .about h2 {
+    margin-left: 100px;
+  }
+
+  .about h2:nth-child(3), .about h2:nth-child(5) {
+    margin-left: 200px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .content-inner {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+  }
+
+  .about-container {
+    margin-left: -100px;
+  }
+
+  .about h2 {
+    margin-left: 150px;
+  }
+
+  .about h2:nth-child(3), .about h2:nth-child(5) {
+    margin-left: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content-inner {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+  }
+
+  .about-container {
+    margin-left: -100px;
+    margin-top: 100px;
+  }
+
+  .about {
+    height: 400px;
+    width: 400px;
+  }
+
+  .about h2 {
+    padding: 0 20px;
+    margin-top: 0px;
+    margin-left: 150px;
+    width: 350px;
+  }
+
+  .about h2:nth-child(3), .about h2:nth-child(5) {
+    margin-left: 250px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .about h1 {
+    margin-left: -200px;
+  }
+
+  .about h2 {
+    margin-left: 100px;
+  }
+
+  .about h2:nth-child(3), .about h2:nth-child(5) {
+    margin-left: 180px;
+  }
 }
 </style>
