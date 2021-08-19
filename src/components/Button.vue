@@ -25,9 +25,9 @@ export default {
   .cybr-btn {
     --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 1%));
     --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 90%);
-    --primary-hue: 350;
-    --primary-lightness: 90;
-    --color: hsl(0, 0%, 100%);
+    --primary-hue: 335;
+    --primary-lightness: 99;
+    --color: hsl(292, 38%, 92%);
     --font-size: 24px;
     --shadow-primary-hue: 320;
     --label-size: 9px;
@@ -44,6 +44,7 @@ export default {
     --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
     --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
     font-family: 'Homemade Apple', cursive, sans-serif;
+    text-shadow:  2px 2px 1px hsl(292, 38%, 52%);
     color: var(--color);
     cursor: pointer;
     background: transparent;

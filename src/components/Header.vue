@@ -51,8 +51,8 @@ export default {
 
 #title a {
   text-decoration: none;
-  color: lavenderblush;
-  text-shadow:  4px 4px 3px rgb(55, 30, 78);
+  color: hsl(292, 38%, 92%);
+  text-shadow:  4px 4px 3px hsl(292, 38%, 52%);
   transition: color 0.5s ease-in-out;
   -moz-transition: color 0.5s ease-in-out;
   -webkit-transition: color 0.5s ease-in-out;
@@ -63,7 +63,7 @@ export default {
 #title a:hover {
   cursor: pointer;
   text-decoration: none;
-  text-shadow:  1px 2px 1px #555;
+  text-shadow:  4px 4px 3px hsl(292, 38%, 42%);
 }
 
 ul, ol {
@@ -94,7 +94,7 @@ ul, ol {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  color: lavenderblush;
+  color: hsl(292, 38%, 92%);
   transition: color 0.25s ease-in-out, background-color 0.5s ease-in-out;
   -moz-transition: color 0.25s ease-in-out, background-color 0.5s ease-in-out;
   -webkit-transition: color 0.25s ease-in-out, background-color 0.5s ease-in-out;

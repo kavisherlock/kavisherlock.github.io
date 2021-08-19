@@ -1,9 +1,8 @@
 <template>
   <div class="worklist">
-    <p class="github">
-      All available at <a href="https://github.com/kavisherlock" taget="_blank">https://github.com/kavisherlock</a>
-    </p>
-    <br />
+    <div class="github">
+      Projects Available at <a href="https://github.com/kavisherlock" taget="_blank">https://github.com/kavisherlock</a>
+    </div>
     <section>
       <h3>Personal Website (You are here)</h3>
       <Repo
@@ -11,7 +10,7 @@
         :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('kavisherlock.github.io'))[0]"
       />
     </section>
-    <br /><hr /><br />
+    <hr /><br />
     <section>
       <h3>Chess and AI</h3>
       <Repo
@@ -23,7 +22,15 @@
         :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('chessengine'))[0]"
       />
     </section>
-    <br /><hr /><br />
+    <hr /><br />
+    <section>
+      <h3>Blackjack and AI</h3>
+      <Repo
+        class="repo"
+        :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('blackjack'))[0]"
+      />
+    </section>
+    <hr /><br />
     <section>
       <h3>College Projects</h3>
       <Repo
@@ -37,7 +44,7 @@
         :repo="myRepos.filter(repo => repo.name.toLowerCase().includes('prediction'))[0]"
       />
     </section>
-    <br /><hr /><br />
+    <hr /><br />
     <section>
       <h3>Playgrounds</h3>
       <p>Playgrounds are my way to learn various concepts or technologies by applying them
@@ -49,7 +56,7 @@
         :repo="repo"
       />
     </section>
-    <br /><hr /><br />
+    <hr /><br />
     <section>
       <h3>Clones</h3>
       <p>Clones are my way to learn different development frameworks with a specific app to build</p>
@@ -97,6 +104,10 @@ export default {
     margin-bottom: 50px;
   }
 
+  h3 {
+    color: hsl(292, 38%, 92%);
+  }
+
   p {
     padding-bottom: 20px;
     margin-top: -15px;
@@ -110,11 +121,11 @@ export default {
   }
 
   .description a {
-    color: lavender;
+    color: hsl(335, 72%, 85%);
   }
 
   .description a:hover {
-    color: lavenderblush;
+    color: hsl(292, 38%, 92%);
   }
 
   .description li {
@@ -123,12 +134,7 @@ export default {
     margin-left: -40px;
   }
 
-  .github {
-    float: right;
-    margin-right: 10px;
-  }
-
-  .github a {
+  .github, .github a {
     color: white;
   }
 </style>

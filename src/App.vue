@@ -55,24 +55,20 @@ export default {
   }
 
   #app {
-    min-height: 100vh;
+    min-height: 90vh;
     min-width: 500px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: rgb(255, 220, 232);
+    color: hsl(335, 99%, 68%);
     padding: 0 2% 2% 2%;
   }
 
   .blueMajority {
-    background: linear-gradient(to bottom right, #132535 250px, #1e3952 250px, #34778d 90%);
+    background: linear-gradient(to bottom right, hsl(0, 5%, 33%) 20%, hsl(292, 38%, 92%));
   }
 
   .purpleMajority {
-    background: linear-gradient(to bottom right, #133553 10%, #34778d);
-  }
-
-  .pinkMajority {
-    background:radial-gradient(farthest-corner at 40px 40px, #132535, #191027, #296174 90%);
+    background: linear-gradient(to bottom right, hsl(212, 51%, 31%) 10%, hsl(204, 39%, 35%));
   }
 
   .fade-enter-active,
@@ -85,26 +81,23 @@ export default {
     opacity: 0
   }
 
-  #header {
-    margin-bottom: 20px;
-  }
-
   footer {
     text-align: center;
-    padding: 20px;
-    width: 100%;
-    min-width: 480px;;
-    height: 100px;
-    background: lavenderblush;
-    color: #333333aa;
+    padding: 20px 0 40px 0;
+    margin-top: -30px;
+    min-width: 480px;
+    height: 70px;
+    background: hsla(292, 38%, 92%, 50%);
+    color: hsl(331, 86%, 75%);
   }
 
   footer a {
-    color: rgb(255, 119, 142);
+    color: hsl(335, 99%, 68%);
   }
 
   .bookfooter {
-    background: rgb(230, 246, 250);
+    background: hsl(202, 20%, 92%);
+    color: hsl(204, 39%, 55%)
   }
 
   .bookfooter a {

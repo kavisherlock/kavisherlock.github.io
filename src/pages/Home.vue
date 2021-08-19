@@ -9,7 +9,7 @@
           <h2>Software Engineer since 2016</h2>
           <h2>Reading since 2017</h2>
           <h2>Blogging since 2018</h2>
-          <h2>Gaming since 2019</h2>
+          <h2>Stuck Inside since COVID-19</h2>
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@ export default {
 
 .about {
   border-radius: 50%;
-  background: #132535;
+  background: hsl(292, 38%, 12%);
   height: 450px;
   width: 450px;
   display: flex;
@@ -61,21 +61,21 @@ export default {
 }
 
 .about h1 {
-  color: lavenderblush;
+  color: hsl(292, 38%, 92%);
   padding: 0px 20px;
   margin-top: -20px;
   margin-left: -250px;
   width: 150px;
-  background: rgb(255, 119, 142);
+  background: hsl(335, 99%, 68%);
 }
 
 .about h2 {
-  background: rgb(255, 240, 245);
+  background: hsl(292, 38%, 92%);
   padding: 0 20px;
   margin-top: 0px;
   margin-left: 250px;
   width: 350px;
-  color: rgb(255, 119, 142);
+  color: hsl(335, 99%, 68%);
 }
 
 .about h2:nth-child(3), .about h2:nth-child(5) {

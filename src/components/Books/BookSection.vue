@@ -56,7 +56,7 @@ export default {
   }
 
   .book-section-header {
-    color: rgb(208, 244, 255);
+    color: hsl(207, 74%, 89%);
     font-weight: bold;
     font-size: 150%;
     padding: 5px 25px;
@@ -64,15 +64,15 @@ export default {
     transition: background 0.5s ease-in-out;
     display: flex;
     justify-content: space-between;
-    background-color: #013A6B;
-    background-image: -webkit-linear-gradient(45deg, #013A6B 50%, #004E95 50%);
+    background-color: hsl(212, 51%, 31%);
+    background-image: -webkit-linear-gradient(45deg, hsl(212, 51%, 31%) 50%, hsl(204, 39%, 35%) 50%);
   }
 
   .book-section-header:hover {
     cursor: pointer;
     transition: background 0.5s ease-in-out;
-    background-color: #013A6B;
-    background-image: -webkit-linear-gradient(45deg, #00417a 50%, #0155a3 50%);
+    background-color: hsl(212, 51%, 41%);
+    background-image: -webkit-linear-gradient(45deg, hsl(212, 51%, 36%) 50%, hsl(204, 39%, 40%) 50%);
   }
 
   .book {

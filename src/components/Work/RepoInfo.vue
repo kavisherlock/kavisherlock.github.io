@@ -28,7 +28,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .repo {
-    color: #c5ddf5;
+    color: hsl(292, 38%, 92%);
     padding: 0 15px 20px 15px;
     font-size: 18px;
     line-height: 1.2em;
@@ -41,12 +41,12 @@ export default {
 
   .repo a {
     text-decoration: none;
-    color: lavender;
+    color: hsl(335, 72%, 85%);
     border-bottom: 1px solid white
   }
 
   .repo a:hover {
-    color: lavenderblush;
+    color: hsl(292, 38%, 92%);
   }
 
   .bouncein {

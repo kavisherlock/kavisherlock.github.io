@@ -103,12 +103,11 @@ export default {
     },
 
     startMessage() {
-      const message = ['code', 'build'];
+      const message = 'sup nerd'.split('');
       if (message[this.startMessageIndex].match(/[a-z]/i) || message[this.startMessageIndex].match(/[0-9]/i)) {
         this.renderLetter(message[this.startMessageIndex]);
       }
       this.startMessageIndex += 1;
-      console.log(this.startMessageIndex);
 
       if (this.startMessageIndex >= message.length) {
         clearInterval(this.startTimer);
@@ -165,8 +164,8 @@ export default {
 
 <style>
   #subtext {
-    margin-top: -5px;
-    color: lavenderblush;
+    margin-top: -15px;
+    color: hsl(300, 64%, 8%);
     opacity: 0.5;
   }
 </style>

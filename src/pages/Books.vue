@@ -4,32 +4,32 @@
     <p class="subtext">Blog: <a href="https://kavishandbooks.wordpress.com/" target="_blank">Kavish and Books</a></p>
     <BookSection
       :year="'2021'"
-      :bookCount="'(5/52)'"
+      :bookCount="'(' + bookNames2021.length + '/52)'"
       :books="bookNames2021"
       :apiKey="apiKey"
       :initialShowBooks="true"
     />
     <BookSection
       :year="'2020'"
-      :bookCount="'(48/52)'"
+      :bookCount="'(' + bookNames2020.length + '/52)'"
       :books="bookNames2020"
       :apiKey="apiKey"
     />
     <BookSection
       :year="'2019'"
-      :bookCount="'(46/52)'"
+      :bookCount="'(' + bookNames2019.length + '/52)'"
       :books="bookNames2019"
       :apiKey="apiKey"
     />
     <BookSection
       :year="'2018'"
-      :bookCount="'(57/52)'"
+      :bookCount="'(' + bookNames2018.length + '/52)'"
       :books="bookNames2018"
       :apiKey="apiKey"
     />
     <BookSection
       :year="'2017'"
-      :bookCount="'(55/52)'"
+      :bookCount="'(' + bookNames2017.length + '/52)'"
       :books="bookNames2017"
       :apiKey="apiKey"
     />
@@ -75,7 +75,7 @@ export default {
 <style scoped>
 .books-container {
   text-align: center;
-  background-color: rgb(230, 246, 250);
+  background-color: hsl(202, 20%, 92%);
   width: 100%;
   padding-top: 10px;
   margin-bottom: 100px;
@@ -83,6 +83,11 @@ export default {
 }
 
 .subtext, .subtext a {
-  color: rgb(19, 37, 53);
+  color: hsl(212, 51%, 31%);
+}
+
+p.subtext {
+  margin-top: -10px;
+  margin-bottom: 30px;
 }
 </style>
