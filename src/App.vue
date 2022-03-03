@@ -21,7 +21,7 @@
       bookfooter: $route.name !== 'Home',
     }"
   >
-    <p>All rights reserved &#169; 2021 | Designed & developed by <a href="https://twitter.com/kavisherlock">Kavish</a></p>
+    <p>All rights reserved &#169; 2022 | Designed & developed by <a href="https://twitter.com/kavisherlock">Kavish</a></p>
     <p class="credit">
       Glitchy buttons in the header based on <a href="https://codepen.io/jh3y/pen/PoGbxLp">
         https://codepen.io/jh3y/pen/PoGbxLp

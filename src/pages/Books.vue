@@ -3,11 +3,17 @@
     <h2 class="subtext">Yearly Target: 52 Books</h2>
     <p class="subtext">Blog: <a href="https://kavishandbooks.wordpress.com/" target="_blank">Kavish and Books</a></p>
     <BookSection
+      :year="'2022'"
+      :bookCount="'(' + bookNames2022.length + '/52)'"
+      :books="bookNames2022"
+      :apiKey="apiKey"
+      :initialShowBooks="true"
+    />
+    <BookSection
       :year="'2021'"
       :bookCount="'(' + bookNames2021.length + '/52)'"
       :books="bookNames2021"
       :apiKey="apiKey"
-      :initialShowBooks="true"
     />
     <BookSection
       :year="'2020'"
@@ -38,6 +44,7 @@
 
 <script>
 import BookSection from '../components/Books/BookSection.vue';
+import bookList2022 from '../resources/books/bookList2022.txt';
 import bookList2021 from '../resources/books/bookList2021.txt';
 import bookList2020 from '../resources/books/bookList2020.txt';
 import bookList2019 from '../resources/books/bookList2019.txt';
@@ -51,6 +58,7 @@ export default {
   },
   data() {
     return {
+      bookNames2022: [],
       bookNames2021: [],
       bookNames2020: [],
       bookNames2019: [],
@@ -62,6 +70,7 @@ export default {
     BookSection,
   },
   mounted() {
+    this.bookNames2022 = bookList2022.split('\n');
     this.bookNames2021 = bookList2021.split('\n');
     this.bookNames2020 = bookList2020.split('\n');
     this.bookNames2019 = bookList2019.split('\n');
