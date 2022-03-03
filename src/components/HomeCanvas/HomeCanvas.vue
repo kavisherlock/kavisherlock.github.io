@@ -6,8 +6,10 @@
       width="500"
       height="500"
       @click="handleMouseClick"
+      @keyup.enter="handleMouseClick"
       @mousemove="handleMouseMove"
       @mouseleave="handleMouseLeave"
+      @blur="handleMouseLeave"
     >
       <Grid />
     </canvas>

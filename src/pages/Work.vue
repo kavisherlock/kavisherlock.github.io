@@ -89,9 +89,8 @@ export default {
     axios
       .get('https://api.github.com/users/kavisherlock/repos?sort=pushed')
       .then((response) => {
-        this.myRepos =
-          response.data
-            .filter(repo => !repo.fork && !repo.archived);
+        this.myRepos = response.data
+          .filter((repo) => !repo.fork && !repo.archived);
         console.log(this.myRepos);
       });
   },

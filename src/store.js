@@ -65,7 +65,7 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    grid: state => state.grid,
-    bookMap: state => state.bookMap,
+    grid: (state) => state.grid,
+    bookMap: (state) => state.bookMap,
   },
 });

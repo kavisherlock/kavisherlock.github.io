@@ -1,7 +1,11 @@
 <template>
   <div class="book-section">
     <div class="book-section-header"
-      v-on:click="showBooks = !showBooks"
+      @click="showBooks = !showBooks"
+      @keyup.enter="showBooks = !showBooks"
+      role="button"
+      tabindex="0"
+      :aria-label="showBooks ? 'Hide Books' : 'Show Books'"
     >
       <div>{{year}}</div>
       <div>{{bookCount}}</div>
