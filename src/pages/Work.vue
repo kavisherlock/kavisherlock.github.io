@@ -91,7 +91,6 @@ export default {
       .then((response) => {
         this.myRepos = response.data
           .filter((repo) => !repo.fork && !repo.archived);
-        console.log(this.myRepos);
       });
   },
 };

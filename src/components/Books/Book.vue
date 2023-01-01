@@ -57,11 +57,11 @@ export default {
   .book {
     text-align: center;
     width: auto;
-    height: 170px;
+    height: 190px;
   }
 
   .book img {
-    height: 170px;
+    height: 190px;
   }
 
   .bouncein {

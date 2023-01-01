@@ -82,7 +82,7 @@ export default {
   .book {
     display: inline-block;
     width: 130px;
-    margin: 1.5%;
+    margin: 1%;
   }
 
   .rollin {
