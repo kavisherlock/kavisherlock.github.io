@@ -3,13 +3,15 @@
     <h2 class="subtext">Yearly Target: 52 Books</h2>
     <p class="subtext">Blog: <a href="https://kavishandbooks.wordpress.com/" target="_blank">Kavish and Books</a></p>
     <BookSection
-      :year="'2022'"
-      :bookCount="'(' + bookNames2022.length + '/52)'"
-      :books="bookNames2022"
+      v-for="(booksList, index) in books.slice().reverse()"
+      :key="2017 + books.length - 1 - index"
+      :year="2017 + books.length - 1 - index"
+      :bookCount="'(' + booksList.length + '/52)'"
+      :books="booksList"
       :apiKey="apiKey"
-      :initialShowBooks="true"
+      :initialShowBooks="index == 0"
     />
-    <BookSection
+    <!-- <BookSection
       :year="'2021'"
       :bookCount="'(' + bookNames2021.length + '/52)'"
       :books="bookNames2021"
@@ -38,12 +40,13 @@
       :bookCount="'(' + bookNames2017.length + '/52)'"
       :books="bookNames2017"
       :apiKey="apiKey"
-    />
+    /> -->
   </div>
 </template>
 
 <script>
 import BookSection from '../components/Books/BookSection.vue';
+import bookList2023 from '../resources/books/bookList2023.txt';
 import bookList2022 from '../resources/books/bookList2022.txt';
 import bookList2021 from '../resources/books/bookList2021.txt';
 import bookList2020 from '../resources/books/bookList2020.txt';
@@ -58,24 +61,22 @@ export default {
   },
   data() {
     return {
-      bookNames2022: [],
-      bookNames2021: [],
-      bookNames2020: [],
-      bookNames2019: [],
-      bookNames2018: [],
-      bookNames2017: [],
+      books: [],
     };
   },
   components: {
     BookSection,
   },
   mounted() {
-    this.bookNames2022 = bookList2022.split('\n');
-    this.bookNames2021 = bookList2021.split('\n');
-    this.bookNames2020 = bookList2020.split('\n');
-    this.bookNames2019 = bookList2019.split('\n');
-    this.bookNames2018 = bookList2018.split('\n');
-    this.bookNames2017 = bookList2017.split('\n');
+    this.books = [
+      bookList2017.split('\n'),
+      bookList2018.split('\n'),
+      bookList2019.split('\n'),
+      bookList2020.split('\n'),
+      bookList2021.split('\n'),
+      bookList2022.split('\n'),
+      bookList2023.split('\n'),
+    ];
   },
 };
 </script>

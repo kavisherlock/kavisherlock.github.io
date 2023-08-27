@@ -5,11 +5,11 @@
       <div class="about-container">
         <div class="about">
           <h1>About Me</h1>
-          <h2>Drinking Coffee since 2015</h2>
           <h2>Software Engineer since 2016</h2>
           <h2>Reading since 2017</h2>
-          <h2>Blogging since 2018</h2>
-          <h2>Stuck Inside since COVID-19</h2>
+          <h2>Blogged between 2018-2020</h2>
+          <h2>Gaming since 2020</h2>
+          <h2>Cat-Dad since 2021</h2>
         </div>
       </div>
     </div>
